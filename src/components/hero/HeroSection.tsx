@@ -2,7 +2,7 @@ import { useState } from "react";
 import { MagicRingsBackground } from "./MagicRingsBackground";
 import { FloatingNav } from "./FloatingNav";
 import { getDownloadUrl, SITE_COPY } from "../../config/site";
-import productMark from "../../assets/figma/product-mark-h5.png";
+import productMark from "../../assets/figma/product-mark-h5.svg";
 import "./hero.css";
 
 export function HeroSection() {

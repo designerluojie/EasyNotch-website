@@ -5,6 +5,7 @@
   align-items: center;
   justify-content: center;
   gap: 40px;
+  overflow: hidden;
   padding: 120px 24px 80px;
   background: #060508;
 }

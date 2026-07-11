@@ -1,12 +1,14 @@
 import githubIcon from "../../../assets/figma/hero-pc/github.svg";
 import { SITE_COPY } from "../../../config/site";
 import BorderGlow from "./BorderGlow";
+import { HERO_BORDER_GLOW_COLORS } from "./hero-border-glow-config";
 
 export function HeroPcNavigation() {
   return (
     <BorderGlow
       backgroundColor="#141119"
       borderRadius={24}
+      colors={[...HERO_BORDER_GLOW_COLORS]}
       className="hero-pc__navigation"
     >
       <nav className="hero-pc__navigation-content" aria-label="主导航">

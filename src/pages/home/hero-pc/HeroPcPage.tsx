@@ -5,6 +5,7 @@ import { getDownloadUrl, SITE_COPY } from "../../../config/site";
 import { HeroPcBackground } from "./HeroPcBackground";
 import { HeroPcNavigation } from "./HeroPcNavigation";
 import BorderGlow from "./BorderGlow";
+import { HERO_BORDER_GLOW_COLORS } from "./hero-border-glow-config";
 import "./hero-pc.css";
 
 export function HeroPcPage() {
@@ -42,6 +43,7 @@ export function HeroPcPage() {
         <BorderGlow
           backgroundColor="#141119"
           borderRadius={24}
+          colors={[...HERO_BORDER_GLOW_COLORS]}
           className="hero-pc__cta-surface"
         >
           <button className="hero-pc__cta" type="button" onClick={handleDemoClick}>

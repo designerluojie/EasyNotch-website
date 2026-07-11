@@ -21,3 +21,16 @@ export const HERO_RING_CONFIG = {
   followMouse: false,
   clickBurst: false,
 } as const;
+
+export function ringRadiusAt({ elapsedMs, index }: { elapsedMs: number; index: number }) {
+  const elapsedSeconds = elapsedMs / 1000;
+  const baseRadius =
+    HERO_RING_CONFIG.baseRadius +
+    index * HERO_RING_CONFIG.radiusStep * HERO_RING_CONFIG.ringGap * 0.55;
+  return (
+    baseRadius +
+    Math.sin(elapsedSeconds * HERO_RING_CONFIG.speed + index * 0.46) *
+      HERO_RING_CONFIG.scaleRate *
+      0.03
+  );
+}

@@ -39,11 +39,11 @@ const fragmentShader = `
       float index = float(i);
       if (index >= uRingCount) continue;
       float radius = uBaseRadius + index * uRadiusStep * uRingGap * 0.55;
-      radius += sin(uTime * 0.00015 * uSpeed + index * 0.46) * uScaleRate * 0.006;
-      float noise = sin(angle * 5.0 + index * 1.7 + uTime * 0.0002 * uSpeed) * uNoiseAmount * 0.004;
+      radius += sin(uTime * 0.001 * uSpeed + index * 0.46) * uScaleRate * 0.03;
+      float noise = sin(angle * 5.0 + index * 1.7 + uTime * 0.001 * uSpeed) * uNoiseAmount * 0.015;
       float edgeWidth = 0.0035 * max(uLineThickness, 1.0) + uBlur * 0.003;
       float edge = 1.0 - smoothstep(edgeWidth, edgeWidth * 2.7, abs(distanceFromCenter - radius + noise));
-      float breathing = mix(uFadeOut, 1.0, 0.5 + 0.5 * sin(angle * 2.0 + index * 0.9));
+      float breathing = mix(uFadeOut, 1.0, 0.5 + 0.5 * sin(angle * 2.0 + index * 0.9 + uTime * 0.001 * uSpeed * 0.8));
       float attenuation = 1.0 - (index / max(uAttenuation, 1.0)) * 0.45;
       rings += edge * breathing * attenuation;
     }
@@ -71,7 +71,11 @@ export function HeroPcBackground() {
 
   useEffect(() => {
     const container = containerRef.current;
-    if (!container || reducedMotion || !("WebGLRenderingContext" in window)) return;
+    if (!container) return;
+    if (reducedMotion || !("WebGLRenderingContext" in window)) {
+      setWebglFailed(true);
+      return;
+    }
 
     let renderer: THREE.WebGLRenderer;
     try {

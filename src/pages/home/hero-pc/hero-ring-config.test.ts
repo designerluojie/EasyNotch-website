@@ -1,4 +1,4 @@
-import { HERO_RING_CONFIG } from "./hero-ring-config";
+import { HERO_RING_CONFIG, ringRadiusAt } from "./hero-ring-config";
 
 describe("hero ring background configuration", () => {
   it("matches the Basic preset from the provided customization panel", () => {
@@ -25,5 +25,12 @@ describe("hero ring background configuration", () => {
       followMouse: false,
       clickBurst: false,
     });
+  });
+
+  it("produces a visibly different ring radius after one second", () => {
+    const initial = ringRadiusAt({ elapsedMs: 0, index: 0 });
+    const afterOneSecond = ringRadiusAt({ elapsedMs: 1000, index: 0 });
+
+    expect(Math.abs(afterOneSecond - initial)).toBeGreaterThan(0.001);
   });
 });

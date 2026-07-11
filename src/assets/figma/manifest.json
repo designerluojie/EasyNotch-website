@@ -1,0 +1,15 @@
+{
+  "source": "https://www.figma.com/design/sPAqmRh7r6Z8K2sXtQtjye/VibeCoding?node-id=635-6584",
+  "excludedBackgroundLayers": ["Union", "Rectangle 25", "Rectangle 26"],
+  "assets": {
+    "pcWallpaper": "https://www.figma.com/api/mcp/asset/f40a8a67-9117-4761-90b5-1d79fed7452d",
+    "pcBody": "https://www.figma.com/api/mcp/asset/b3544b92-17d1-4ee9-bff2-838107eb3d9f",
+    "pcScreenBody": "https://www.figma.com/api/mcp/asset/504b60ef-384a-469a-9f5f-d59a14ce0061",
+    "pcNotchBackground": "https://www.figma.com/api/mcp/asset/7a3f9483-584a-4e67-86e9-1ed26b77848f",
+    "h5Wallpaper": "https://www.figma.com/api/mcp/asset/599527f9-3899-48d4-8a8f-ed7065d3039a",
+    "h5Body": "https://www.figma.com/api/mcp/asset/33f0812d-f9e3-40ec-9bdd-2d7f7050756a",
+    "h5ScreenBody": "https://www.figma.com/api/mcp/asset/2c3908ea-9170-4009-914d-4dd22f8809af",
+    "h5NotchBackground": "https://www.figma.com/api/mcp/asset/398af6a7-35f2-4cc6-b030-6c20e8ebcf89",
+    "h5ProductMark": "https://www.figma.com/api/mcp/asset/0f0e8378-f539-40cb-8edd-0f0c8b8304a0"
+  }
+}

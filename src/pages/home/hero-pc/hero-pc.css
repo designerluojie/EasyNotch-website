@@ -117,8 +117,9 @@
   gap: 4px;
   padding: 0;
   border: 0;
-  border-radius: inherit;
+  border-radius: 24px;
   background: transparent;
+  overflow: hidden;
   color: #fff;
   font-size: 24px;
   font-weight: 500;

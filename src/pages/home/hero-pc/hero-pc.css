@@ -22,7 +22,7 @@
 }
 
 .hero-pc__navigation.border-glow-card {
-  position: absolute;
+  position: fixed;
   z-index: 3;
   top: 29px;
   left: 50%;
@@ -44,6 +44,76 @@
   align-items: center;
   justify-content: space-between;
   padding: 0 32px;
+  overflow: hidden;
+}
+
+.hero-pc__navigation-left,
+.hero-pc__navigation-right {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.hero-pc__navigation-left {
+  gap: 20px;
+}
+
+.hero-pc__navigation-right {
+  gap: 24px;
+}
+
+.hero-pc__nav-logo-shell,
+.hero-pc__nav-cta-shell {
+  display: block;
+  height: 40px;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.hero-pc__nav-logo {
+  display: block;
+  width: 40px;
+  height: 40px;
+  max-width: none;
+  transition: transform 80ms linear;
+}
+
+.hero-pc__nav-cta-shell {
+  height: 40px;
+}
+
+.hero-pc__nav-cta {
+  display: inline-flex;
+  width: 160px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 0;
+  border: 0;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  cursor: pointer;
+  transition: transform 80ms linear, background-color 160ms ease;
+}
+
+.hero-pc__nav-cta:hover {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.hero-pc__nav-cta:active {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.hero-pc__nav-cta img {
+  display: block;
+  width: 24px;
+  height: 24px;
 }
 
 .hero-pc__brand {

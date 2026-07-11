@@ -7,6 +7,7 @@ import "./BorderGlow.css";
 interface BorderGlowProps {
   children?: ReactNode;
   className?: string;
+  style?: CSSProperties;
   edgeSensitivity?: number;
   glowColor?: string;
   backgroundColor?: string;
@@ -67,7 +68,7 @@ function animateValue({ start = 0, end = 100, duration = 1000, delay = 0, ease =
 }
 
 export default function BorderGlow({
-  children, className = "", edgeSensitivity = 30, glowColor = "240 70 60",
+  children, className = "", style, edgeSensitivity = 30, glowColor = "240 70 60",
   backgroundColor = "#120F17", borderRadius = 28, glowRadius = 40,
   glowIntensity = 1, coneSpread = 25, animated = false,
   colors = ["#c084fc", "#f472b6", "#38bdf8"], fillOpacity = 0.5,
@@ -112,14 +113,14 @@ export default function BorderGlow({
     animateValue({ ease: easeInCubic, delay: 2500, duration: 1500, start: 100, end: 0, onUpdate: value => card.style.setProperty("--edge-proximity", `${value}`), onEnd: () => card.classList.remove("sweep-active") });
   }, [animated]);
 
-  const style = {
+  const cardStyle = {
     "--card-bg": backgroundColor, "--edge-sensitivity": edgeSensitivity,
     "--border-radius": `${borderRadius}px`, "--glow-padding": `${glowRadius}px`,
     "--cone-spread": coneSpread, "--fill-opacity": fillOpacity,
-    ...buildGlowVars(glowColor, glowIntensity), ...buildGradientVars(colors),
+    ...buildGlowVars(glowColor, glowIntensity), ...buildGradientVars(colors), ...style,
   } as CSSProperties;
 
-  return <div ref={cardRef} onPointerMove={handlePointerMove} className={`border-glow-card ${className}`} style={style}>
+  return <div ref={cardRef} onPointerMove={handlePointerMove} className={`border-glow-card ${className}`} style={cardStyle}>
     <span className="edge-light" />
     <div className="border-glow-inner">{children}</div>
   </div>;

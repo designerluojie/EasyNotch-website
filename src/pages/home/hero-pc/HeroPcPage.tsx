@@ -31,7 +31,7 @@ export function HeroPcPage() {
   return (
     <section className="hero-pc" aria-labelledby="hero-pc-title">
       <HeroPcBackground />
-      <HeroPcNavigation />
+      <HeroPcNavigation onDemoClick={handleDemoClick} />
       <div className="hero-pc__content">
         <img className="hero-pc__product-mark" src={productMark} alt="" />
         <h1 id="hero-pc-title">{SITE_COPY.heroTitle}</h1>

@@ -67,7 +67,7 @@ function animateValue({ start = 0, end = 100, duration = 1000, delay = 0, ease =
 }
 
 export default function BorderGlow({
-  children, className = "", edgeSensitivity = 30, glowColor = "40 80 80",
+  children, className = "", edgeSensitivity = 30, glowColor = "271 70 70",
   backgroundColor = "#120F17", borderRadius = 28, glowRadius = 40,
   glowIntensity = 1, coneSpread = 25, animated = false,
   colors = ["#c084fc", "#f472b6", "#38bdf8"], fillOpacity = 0.5,

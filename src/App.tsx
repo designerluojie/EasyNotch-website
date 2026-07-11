@@ -1,13 +1,15 @@
 import { HeroSection } from "./components/hero/HeroSection";
 import { MacBookMockup } from "./components/mockup/MacBookMockup";
+import { ContactSection } from "./components/contact/ContactSection";
+import { FAQSection } from "./components/faq/FAQSection";
 
 export function App() {
   return (
     <main className="site-shell">
       <HeroSection />
       <MacBookMockup />
-      <section aria-label="Frequently asked questions" className="site-section" />
-      <section aria-label="Contact" className="site-section" />
+      <FAQSection />
+      <ContactSection />
     </main>
   );
 }

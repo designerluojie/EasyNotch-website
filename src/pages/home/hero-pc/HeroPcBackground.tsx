@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
-import "./hero.css";
 
 const vertexShader = `
   void main() {
@@ -12,36 +11,30 @@ const fragmentShader = `
   precision highp float;
   uniform float uTime;
   uniform vec2 uResolution;
-  uniform vec3 uColor;
-  uniform vec3 uColorTwo;
 
   void main() {
     vec2 uv = (gl_FragCoord.xy - 0.5 * uResolution.xy) / min(uResolution.x, uResolution.y);
     float distanceFromCenter = length(uv);
     float angle = atan(uv.y, uv.x);
-    float glow = 0.0;
+    float rings = 0.0;
 
-    for (int i = 0; i < 6; i++) {
+    for (int i = 0; i < 8; i++) {
       float index = float(i);
-      float radius = 0.28 + index * 0.105 + mod(uTime * 0.018 + index * 0.17, 0.08);
-      float ring = 1.0 - smoothstep(0.006, 0.012, abs(distanceFromCenter - radius));
-      float edgeFade = 0.25 + 0.75 * abs(cos(angle));
-      glow += ring * edgeFade * (1.0 - index * 0.08);
+      float radius = 0.18 + index * 0.092 + sin(uTime * 0.00012 + index * 0.46) * 0.006;
+      float edge = 1.0 - smoothstep(0.003, 0.014, abs(distanceFromCenter - radius));
+      float breathing = 0.68 + 0.32 * sin(angle * 2.0 + index * 0.9 + uTime * 0.0002);
+      rings += edge * breathing * (1.0 - index * 0.045);
     }
 
-    vec3 color = mix(uColor, uColorTwo, clamp(distanceFromCenter * 1.2, 0.0, 1.0));
-    float vignette = 1.0 - smoothstep(0.38, 0.82, distanceFromCenter);
-    gl_FragColor = vec4(color * glow * vignette, glow * vignette * 0.9);
+    float vignette = 1.0 - smoothstep(0.3, 0.86, distanceFromCenter);
+    vec3 blue = mix(vec3(0.07, 0.18, 1.0), vec3(0.13, 0.32, 1.0), clamp(distanceFromCenter * 1.5, 0.0, 1.0));
+    float glow = rings * vignette;
+    gl_FragColor = vec4(blue * glow * 0.9, glow * 0.78);
   }
 `;
 
-type Props = {
-  active?: boolean;
-};
-
-export function MagicRingsBackground({ active = true }: Props) {
+export function HeroPcBackground() {
   const containerRef = useRef<HTMLDivElement | null>(null);
-  const [isVisible, setIsVisible] = useState(active);
   const [reducedMotion, setReducedMotion] = useState(false);
   const [webglFailed, setWebglFailed] = useState(false);
 
@@ -54,25 +47,8 @@ export function MagicRingsBackground({ active = true }: Props) {
   }, []);
 
   useEffect(() => {
-    const element = containerRef.current;
-    if (!element || typeof IntersectionObserver === "undefined") return;
-
-    const observer = new IntersectionObserver(
-      ([entry]) => setIsVisible(entry.isIntersecting),
-      { threshold: 0.01 },
-    );
-    observer.observe(element);
-    return () => observer.disconnect();
-  }, []);
-
-  useEffect(() => {
-    const mount = containerRef.current;
-    if (!mount || !active || !isVisible || reducedMotion || webglFailed) return;
-
-    if (typeof window !== "undefined" && !("WebGLRenderingContext" in window)) {
-      setWebglFailed(true);
-      return;
-    }
+    const container = containerRef.current;
+    if (!container || reducedMotion || !("WebGLRenderingContext" in window)) return;
 
     let renderer: THREE.WebGLRenderer;
     try {
@@ -82,9 +58,10 @@ export function MagicRingsBackground({ active = true }: Props) {
       return;
     }
 
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
     renderer.setClearColor(0x000000, 0);
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-    mount.appendChild(renderer.domElement);
+    renderer.domElement.setAttribute("aria-hidden", "true");
+    container.appendChild(renderer.domElement);
 
     const scene = new THREE.Scene();
     const camera = new THREE.OrthographicCamera(-0.5, 0.5, 0.5, -0.5, 0.1, 10);
@@ -92,21 +69,20 @@ export function MagicRingsBackground({ active = true }: Props) {
     const uniforms = {
       uTime: { value: 0 },
       uResolution: { value: new THREE.Vector2() },
-      uColor: { value: new THREE.Color("#1c5cff") },
-      uColorTwo: { value: new THREE.Color("#1a2cf0") },
     };
     const material = new THREE.ShaderMaterial({
       vertexShader,
       fragmentShader,
       uniforms,
       transparent: true,
+      depthWrite: false,
     });
-    const quad = new THREE.Mesh(new THREE.PlaneGeometry(1, 1), material);
-    scene.add(quad);
+    const mesh = new THREE.Mesh(new THREE.PlaneGeometry(1, 1), material);
+    scene.add(mesh);
 
     const resize = () => {
-      const width = mount.clientWidth;
-      const height = mount.clientHeight;
+      const width = container.clientWidth;
+      const height = container.clientHeight;
       renderer.setSize(width, height, false);
       uniforms.uResolution.value.set(
         width * renderer.getPixelRatio(),
@@ -114,8 +90,8 @@ export function MagicRingsBackground({ active = true }: Props) {
       );
     };
     resize();
-    const observer = new ResizeObserver(resize);
-    observer.observe(mount);
+    const resizeObserver = new ResizeObserver(resize);
+    resizeObserver.observe(container);
 
     let frame = 0;
     const render = (time: number) => {
@@ -127,21 +103,21 @@ export function MagicRingsBackground({ active = true }: Props) {
 
     return () => {
       window.cancelAnimationFrame(frame);
-      observer.disconnect();
-      mount.removeChild(renderer.domElement);
-      quad.geometry.dispose();
+      resizeObserver.disconnect();
+      if (container.contains(renderer.domElement)) container.removeChild(renderer.domElement);
+      mesh.geometry.dispose();
       material.dispose();
       renderer.dispose();
     };
-  }, [active, isVisible, reducedMotion, webglFailed]);
+  }, [reducedMotion]);
 
   return (
     <div
       ref={containerRef}
-      className={`magic-rings-container${webglFailed || reducedMotion ? " magic-rings-container--fallback" : ""}`}
+      className={`hero-pc__background${webglFailed || reducedMotion ? " hero-pc__background--fallback" : ""}`}
       aria-hidden="true"
     >
-      <div className="magic-rings-fallback" />
+      <div className="hero-pc__rings-fallback" />
     </div>
   );
 }

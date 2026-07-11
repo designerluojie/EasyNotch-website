@@ -1,0 +1,199 @@
+.hero-pc {
+  position: relative;
+  width: 100%;
+  min-height: 800px;
+  overflow: hidden;
+  isolation: isolate;
+  background: #060508;
+  color: #fff;
+}
+
+.hero-pc__background {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.hero-pc__background canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  opacity: 0.94;
+}
+
+.hero-pc__rings-fallback,
+.hero-pc__rings-fallback::before,
+.hero-pc__rings-fallback::after {
+  position: absolute;
+  border: 2px solid rgba(35, 74, 255, 0.72);
+  border-radius: 50%;
+  content: "";
+}
+
+.hero-pc__rings-fallback {
+  top: 59%;
+  left: 50%;
+  width: 1060px;
+  aspect-ratio: 1;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 36px rgba(20, 52, 255, 0.25);
+}
+
+.hero-pc__rings-fallback::before {
+  inset: 7%;
+}
+
+.hero-pc__rings-fallback::after {
+  inset: 14%;
+}
+
+.hero-pc__navigation {
+  position: absolute;
+  z-index: 3;
+  top: 29px;
+  left: 50%;
+  display: flex;
+  width: 680px;
+  height: 60px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.05);
+  transform: translateX(-50%);
+  -webkit-backdrop-filter: blur(18px) saturate(120%);
+  backdrop-filter: blur(18px) saturate(120%);
+}
+
+.hero-pc__brand {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 28px;
+  white-space: nowrap;
+}
+
+.hero-pc__github {
+  display: grid;
+  width: 32px;
+  height: 32px;
+  place-items: center;
+  border-radius: 50%;
+  transition: background-color 160ms ease, transform 160ms ease;
+}
+
+.hero-pc__github img {
+  display: block;
+  width: 32px;
+  height: 32px;
+}
+
+.hero-pc__github:hover,
+.hero-pc__cta:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.hero-pc__github:active,
+.hero-pc__cta:active {
+  background: rgba(0, 0, 0, 0.1);
+  transform: translateY(1px);
+}
+
+.hero-pc__content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  min-height: 800px;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 240px;
+  text-align: center;
+}
+
+.hero-pc__product-mark {
+  display: block;
+  width: 128px;
+  height: 128px;
+}
+
+.hero-pc h1 {
+  margin: 32px 0 0;
+  color: #fff;
+  font-size: 70px;
+  font-weight: 600;
+  letter-spacing: -0.055em;
+  line-height: 98px;
+  white-space: nowrap;
+}
+
+.hero-pc p {
+  width: 806px;
+  margin: 16px 0 60px;
+  color: #fff;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 40px;
+}
+
+.hero-pc__cta {
+  display: inline-flex;
+  width: 320px;
+  height: 70px;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 0;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 40px;
+  transition: background-color 160ms ease, transform 160ms ease;
+}
+
+.hero-pc__cta img {
+  display: block;
+  width: 32px;
+  height: 32px;
+}
+
+.hero-pc__notice {
+  position: fixed;
+  z-index: 4;
+  top: 106px;
+  left: 50%;
+  padding: 10px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  background: rgba(24, 24, 27, 0.86);
+  color: rgba(255, 255, 255, 0.86);
+  font-size: 13px;
+  transform: translateX(-50%);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+}
+
+@media (max-width: 760px) {
+  .hero-pc__navigation {
+    width: calc(100% - 48px);
+  }
+
+  .hero-pc h1 {
+    font-size: clamp(36px, 8vw, 70px);
+    white-space: normal;
+  }
+
+  .hero-pc p {
+    width: min(806px, calc(100% - 48px));
+    font-size: clamp(16px, 3vw, 24px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-pc__github,
+  .hero-pc__cta {
+    transition: none;
+  }
+}

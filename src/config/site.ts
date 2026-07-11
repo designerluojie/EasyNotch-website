@@ -6,6 +6,7 @@ export const SITE_COPY = {
     "让你的Macbook刘海，真正有用起来。",
   ],
   contactEmail: "easynotch@163.com",
+  githubUrl: import.meta.env.VITE_GITHUB_URL || "https://github.com",
 } as const;
 
 export function getDownloadUrl(): string | null {

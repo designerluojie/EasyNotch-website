@@ -1,0 +1,11 @@
+:root {
+  --page-bg: #060508;
+  --page-surface: rgba(255, 255, 255, 0.02);
+  --button-surface: rgba(255, 255, 255, 0.1);
+  --text-primary: #ffffff;
+  --text-secondary: rgba(255, 255, 255, 0.7);
+  --text-tertiary: rgba(255, 255, 255, 0.5);
+  --border-subtle: rgba(255, 255, 255, 0.1);
+  --radius-panel: 24px;
+  --radius-notch: 28px;
+}

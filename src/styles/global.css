@@ -1,0 +1,54 @@
+@import "./tokens.css";
+@import "./responsive.css";
+
+:root {
+  color: var(--text-primary);
+  background: var(--page-bg);
+  font-family: "PingFang SC", "Helvetica Neue", Arial, sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--page-bg);
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  overflow-x: hidden;
+  background: var(--page-bg);
+}
+
+button,
+a {
+  font: inherit;
+}
+
+button {
+  border: 0;
+  cursor: pointer;
+}
+
+.site-shell {
+  min-height: 100vh;
+  background: var(--page-bg);
+}
+
+.site-section {
+  position: relative;
+  width: min(100%, 1440px);
+  min-height: 720px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.site-section--hero {
+  min-height: 800px;
+}

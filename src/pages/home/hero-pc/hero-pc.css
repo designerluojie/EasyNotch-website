@@ -16,43 +16,9 @@
   pointer-events: none;
 }
 
-.hero-pc__background canvas {
-  display: block;
+.hero-pc__background .magic-rings-container {
   width: 100%;
   height: 100%;
-  opacity: 0.94;
-}
-
-.hero-pc__rings-fallback,
-.hero-pc__rings-fallback::before,
-.hero-pc__rings-fallback::after {
-  position: absolute;
-  border: 2px solid rgba(168, 85, 247, 0.72);
-  border-radius: 50%;
-  content: "";
-}
-
-.hero-pc__rings-fallback {
-  display: none;
-  top: 59%;
-  left: 50%;
-  width: 1060px;
-  aspect-ratio: 1;
-  transform: translate(-50%, -50%);
-  box-shadow: 0 0 36px rgba(99, 102, 241, 0.25);
-}
-
-.hero-pc__background--fallback .hero-pc__rings-fallback {
-  display: block;
-  animation: hero-pc-rings-drift 8s ease-in-out infinite alternate;
-}
-
-.hero-pc__rings-fallback::before {
-  inset: 7%;
-}
-
-.hero-pc__rings-fallback::after {
-  inset: 14%;
 }
 
 .hero-pc__navigation {
@@ -202,13 +168,4 @@
   .hero-pc__cta {
     transition: none;
   }
-
-  .hero-pc__background--fallback .hero-pc__rings-fallback {
-    animation: none;
-  }
-}
-
-@keyframes hero-pc-rings-drift {
-  from { transform: translate(-50%, -50%) scale(0.98); }
-  to { transform: translate(-50%, -50%) scale(1.02); }
 }

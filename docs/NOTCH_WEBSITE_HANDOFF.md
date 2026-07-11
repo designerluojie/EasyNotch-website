@@ -21,7 +21,8 @@
 
 - `HeroPcPage.tsx`：首屏组合、CTA 和下载提示。
 - `HeroPcNavigation.tsx`：680×60 顶部导航和 GitHub 链接。
-- `HeroPcBackground.tsx`：Three.js 运行时环形背景和 CSS fallback。
+- `HeroPcBackground.tsx`：官网首屏的官方 Magic Rings 外层容器。
+- `MagicRings.tsx` / `MagicRings.css`：直接复用 React Bits 官方 Magic Rings 源码和样式。
 - `hero-ring-config.ts`：按 Magic Rings Basic 面板保存的背景参数。
 - `hero-pc.css`：只包含新版首屏样式。
 
@@ -45,15 +46,20 @@ Figma 锚点：
 
 ## 当前背景参数
 
-`src/pages/home/hero-pc/hero-ring-config.ts` 已按提供的 Customize 截图配置：
+`src/pages/home/hero-pc/hero-ring-config.ts` 按 Magic Rings 页面链接配置，当前 URL 参数为 `ringCount=9&speed=0.8`，其余参数沿用已确认的 Customize 配置：
 
 - 颜色：`#a855f7` / `#6366f1`
-- 环数：6；速度：1；衰减：10
+- 环数：9；速度：0.8；衰减：10
 - 线宽：2；基础半径：0.35；半径步进：0.1；环间距：1.5
 - 缩放速率：0.1；透明度：1；模糊：0；噪声：0.1
 - 旋转：0；淡入：0.7；淡出：0.5
 - 鼠标影响：0.2；悬停缩放：1.2；视差：0.05
 - 跟随鼠标：关闭；点击爆发：关闭
+
+官方来源：
+
+- <https://reactbits.dev/animations/magic-rings?ringCount=9&speed=0.8>
+- <https://github.com/DavidHDev/react-bits/blob/main/src/ts-default/Animations/MagicRings/MagicRings.tsx>
 
 ## 已验证命令
 

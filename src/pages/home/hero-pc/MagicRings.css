@@ -1,0 +1,8 @@
+/* Upstream source: React Bits Magic Rings
+ * https://github.com/DavidHDev/react-bits/blob/main/src/ts-default/Animations/MagicRings/MagicRings.css
+ */
+.magic-rings-container {
+  width: 100%;
+  height: 100%;
+}
+

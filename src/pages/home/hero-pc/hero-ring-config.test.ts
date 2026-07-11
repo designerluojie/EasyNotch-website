@@ -1,12 +1,12 @@
-import { HERO_RING_CONFIG, ringRadiusAt } from "./hero-ring-config";
+import { HERO_RING_CONFIG } from "./hero-ring-config";
 
 describe("hero ring background configuration", () => {
-  it("matches the Basic preset from the provided customization panel", () => {
+  it("matches the Magic Rings URL preset and confirmed visual parameters", () => {
     expect(HERO_RING_CONFIG).toEqual({
       color: "#a855f7",
       colorTwo: "#6366f1",
-      ringCount: 6,
-      speed: 1,
+      ringCount: 9,
+      speed: 0.8,
       attenuation: 10,
       lineThickness: 2,
       baseRadius: 0.35,
@@ -27,10 +27,4 @@ describe("hero ring background configuration", () => {
     });
   });
 
-  it("produces a visibly different ring radius after one second", () => {
-    const initial = ringRadiusAt({ elapsedMs: 0, index: 0 });
-    const afterOneSecond = ringRadiusAt({ elapsedMs: 1000, index: 0 });
-
-    expect(Math.abs(afterOneSecond - initial)).toBeGreaterThan(0.001);
-  });
 });

@@ -133,13 +133,13 @@
   height: 70px;
 }
 
-.hero-pc__cta:active {
-  background: rgba(0, 0, 0, 0.1);
-  transform: translateY(1px);
-}
-
 .hero-pc__cta:hover {
   background: rgba(255, 255, 255, 0.1);
+}
+
+.hero-pc__cta:active {
+  background: rgba(0, 0, 0, 0.1);
+  transform: none;
 }
 
 .hero-pc__cta img {

@@ -21,7 +21,7 @@
   height: 100%;
 }
 
-.hero-pc__navigation.glass-surface {
+.hero-pc__navigation.border-glow-card {
   position: absolute;
   z-index: 3;
   top: 29px;
@@ -29,6 +29,12 @@
   width: 680px;
   height: 60px;
   transform: translateX(-50%);
+}
+
+.hero-pc__navigation .border-glow-inner,
+.hero-pc__cta-surface .border-glow-inner {
+  width: 100%;
+  height: 100%;
 }
 
 .hero-pc__navigation-content {
@@ -124,10 +130,6 @@
 .hero-pc__cta-surface {
   width: 320px;
   height: 70px;
-}
-
-.hero-pc__cta-surface .glass-surface__content {
-  padding: 0;
 }
 
 .hero-pc__cta:active {

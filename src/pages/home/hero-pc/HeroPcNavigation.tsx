@@ -1,14 +1,12 @@
 import githubIcon from "../../../assets/figma/hero-pc/github.svg";
 import { SITE_COPY } from "../../../config/site";
-import GlassSurface from "./GlassSurface";
+import BorderGlow from "./BorderGlow";
 
 export function HeroPcNavigation() {
   return (
-    <GlassSurface
-      width={680}
-      height={60}
+    <BorderGlow
+      backgroundColor="#141119"
       borderRadius={24}
-      backgroundOpacity={0.05}
       className="hero-pc__navigation"
     >
       <nav className="hero-pc__navigation-content" aria-label="主导航">
@@ -23,6 +21,6 @@ export function HeroPcNavigation() {
           <img src={githubIcon} alt="" />
         </a>
       </nav>
-    </GlassSurface>
+    </BorderGlow>
   );
 }

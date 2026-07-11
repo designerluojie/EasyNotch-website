@@ -22,6 +22,7 @@
 - `HeroPcPage.tsx`：首屏组合、CTA 和下载提示。
 - `HeroPcNavigation.tsx`：680×60 顶部导航和 GitHub 链接。
 - `HeroPcBackground.tsx`：Three.js 运行时环形背景和 CSS fallback。
+- `hero-ring-config.ts`：按 Magic Rings Basic 面板保存的背景参数。
 - `hero-pc.css`：只包含新版首屏样式。
 
 Figma 锚点：
@@ -41,6 +42,18 @@ Figma 锚点：
 - `640:6608`「Frame」：立即体验按钮箭头，32×32。
 
 本地资源：`src/assets/figma/hero-pc/`。来源、节点 ID、格式和渲染尺寸记录在 `manifest.json`，资源格式测试位于 `heroAssets.test.ts`。
+
+## 当前背景参数
+
+`src/pages/home/hero-pc/hero-ring-config.ts` 已按提供的 Customize 截图配置：
+
+- 颜色：`#a855f7` / `#6366f1`
+- 环数：6；速度：1；衰减：10
+- 线宽：2；基础半径：0.35；半径步进：0.1；环间距：1.5
+- 缩放速率：0.1；透明度：1；模糊：0；噪声：0.1
+- 旋转：0；淡入：0.7；淡出：0.5
+- 鼠标影响：0.2；悬停缩放：1.2；视差：0.05
+- 跟随鼠标：关闭；点击爆发：关闭
 
 ## 已验证命令
 

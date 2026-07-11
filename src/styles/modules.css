@@ -1,0 +1,358 @@
+.module-panel {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: inherit;
+  background: linear-gradient(135deg, #1b1b20, #0b0b0d 72%);
+  color: #f7f7fa;
+  font-size: 9px;
+  line-height: 1.2;
+}
+
+.module-panel button {
+  border: 0;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+.module-panel__eyebrow {
+  color: rgba(255, 255, 255, 0.48);
+  font-size: 8px;
+  letter-spacing: 0.04em;
+}
+
+.module-panel__topline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 9px 12px 5px;
+}
+
+.module-panel__count {
+  color: rgba(255, 255, 255, 0.38);
+  font-size: 8px;
+}
+
+.module-panel--music {
+  display: grid;
+  grid-template-columns: 42px 1fr 62px;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+}
+
+.music-module__art {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  border-radius: 9px;
+  background: linear-gradient(145deg, #fb7d75, #8c356e 55%, #2b234e);
+  box-shadow: 0 7px 14px rgba(168, 65, 117, 0.22);
+  color: rgba(255, 255, 255, 0.86);
+  font-size: 20px;
+}
+
+.music-module__main {
+  min-width: 0;
+}
+
+.music-module__title,
+.music-module__artist {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.music-module__title {
+  margin-top: 3px;
+  font-size: 11px;
+}
+
+.music-module__artist {
+  margin-top: 2px;
+  color: rgba(255, 255, 255, 0.48);
+  font-size: 8px;
+}
+
+.music-module__progress {
+  height: 2px;
+  margin-top: 6px;
+  overflow: hidden;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.music-module__progress span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: #fff;
+  transition: width 700ms linear;
+}
+
+.music-module__controls {
+  display: grid;
+  grid-template-columns: repeat(3, 16px);
+  align-items: center;
+  justify-content: end;
+  gap: 2px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.music-module__controls button {
+  width: 16px;
+  height: 16px;
+  padding: 0;
+  border-radius: 50%;
+  background: transparent;
+}
+
+.music-module__controls button:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.music-module__controls span {
+  grid-column: 1 / -1;
+  color: rgba(255, 255, 255, 0.42);
+  font-size: 7px;
+  text-align: right;
+}
+
+.file-stash__viewport,
+.clipboard__viewport {
+  width: 100%;
+  overflow: hidden;
+}
+
+.file-stash__track,
+.clipboard__track {
+  display: flex;
+  width: max-content;
+  gap: 7px;
+  padding: 2px 12px 10px;
+  transition: transform 360ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.stash-card {
+  display: flex;
+  width: 118px;
+  height: 25px;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2px;
+  padding: 0 8px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 7px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.stash-card span {
+  color: rgba(255, 255, 255, 0.44);
+  font-size: 6px;
+}
+
+.stash-card strong {
+  overflow: hidden;
+  font-size: 8px;
+  font-weight: 500;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.stash-card--blue { box-shadow: inset 2px 0 #5b9dff; }
+.stash-card--yellow { box-shadow: inset 2px 0 #f3cf6d; }
+.stash-card--violet { box-shadow: inset 2px 0 #b18cff; }
+
+.module-panel--ai {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 12px 8px;
+}
+
+.ai-chat__header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 9px;
+}
+
+.ai-chat__orb {
+  display: grid;
+  width: 14px;
+  height: 14px;
+  place-items: center;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #9f7cff, #f6a8d8);
+  color: #fff;
+  font-size: 8px;
+}
+
+.ai-chat__status {
+  margin-left: auto;
+  color: #7dd7a3;
+  font-size: 7px;
+}
+
+.ai-chat__messages {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+  flex-direction: column;
+  gap: 7px;
+  padding: 10px 0 6px;
+}
+
+.ai-chat__bubble {
+  max-width: 83%;
+  padding: 7px 9px;
+  border-radius: 9px;
+  font-size: 9px;
+  line-height: 1.45;
+}
+
+.ai-chat__bubble--user {
+  align-self: flex-end;
+  background: #5d49a5;
+}
+
+.ai-chat__bubble--assistant {
+  align-self: flex-start;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.ai-chat__caret {
+  display: inline-block;
+  width: 1px;
+  height: 10px;
+  margin-left: 2px;
+  vertical-align: -1px;
+  background: #fff;
+  animation: notch-caret 800ms step-end infinite;
+}
+
+.ai-chat__input {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 8px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 7px;
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 8px;
+}
+
+.ai-chat__input span {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.clipboard__track {
+  padding-top: 1px;
+}
+
+.clipboard-card {
+  display: flex;
+  width: 177px;
+  height: 30px;
+  align-items: center;
+  padding: 0 10px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.58);
+  font-size: 8px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.clipboard-card--active {
+  border-color: rgba(164, 132, 255, 0.6);
+  background: rgba(107, 78, 180, 0.32);
+  color: #fff;
+}
+
+.module-panel--pomodoro {
+  display: grid;
+  grid-template-columns: 70px 1fr auto;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 12px;
+}
+
+.pomodoro__ring {
+  position: relative;
+  width: 64px;
+  height: 64px;
+}
+
+.pomodoro__ring svg {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.pomodoro__ring circle {
+  fill: none;
+  stroke-width: 5;
+}
+
+.pomodoro__ring-track { stroke: rgba(255, 255, 255, 0.1); }
+
+.pomodoro__ring-progress {
+  stroke: #a98aff;
+  stroke-dasharray: 220;
+  transition: stroke-dashoffset 700ms linear;
+}
+
+.pomodoro__ring strong {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-size: 10px;
+}
+
+.pomodoro__copy {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.pomodoro__copy strong { font-size: 12px; }
+.pomodoro__copy > span:last-child { color: rgba(255, 255, 255, 0.42); font-size: 8px; }
+
+.pomodoro__controls {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.pomodoro__controls button {
+  padding: 4px 7px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  font-size: 8px;
+}
+
+.pomodoro__controls button:hover { background: rgba(255, 255, 255, 0.18); }
+
+@keyframes notch-caret {
+  50% { opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .music-module__progress span,
+  .file-stash__track,
+  .clipboard__track,
+  .pomodoro__ring-progress,
+  .ai-chat__caret {
+    transition: none;
+    animation: none;
+  }
+}

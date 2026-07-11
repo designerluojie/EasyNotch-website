@@ -29,7 +29,6 @@ export function HeroPcNavigation({ onDemoClick }: HeroPcNavigationProps) {
 
   const width = 680 + (Math.min(scrollY, 500) / 500) * 320;
   const revealProgress = Math.min(scrollY, 300) / 300;
-  const navigationPadding = 32 * revealProgress;
 
   return (
     <BorderGlow
@@ -42,11 +41,10 @@ export function HeroPcNavigation({ onDemoClick }: HeroPcNavigationProps) {
       <nav
         className="hero-pc__navigation-content"
         aria-label="主导航"
-        style={{ paddingLeft: `${navigationPadding}px`, paddingRight: `${navigationPadding}px` }}
       >
         <div className="hero-pc__navigation-left">
-          <span className="hero-pc__nav-logo-shell" style={{ width: `${40 * revealProgress}px`, opacity: revealProgress }}>
-            <img className="hero-pc__nav-logo" src={productMark} alt="" style={{ transform: `translateX(${-40 * (1 - revealProgress)}px)` }} />
+          <span className="hero-pc__nav-logo-shell" style={{ width: `${40 * revealProgress}px` }}>
+            <img className="hero-pc__nav-logo" src={productMark} alt="" style={{ opacity: revealProgress, transform: `translateX(${-72 * (1 - revealProgress)}px)` }} />
           </span>
           <span className="hero-pc__brand">{SITE_COPY.productName}</span>
         </div>
@@ -60,12 +58,12 @@ export function HeroPcNavigation({ onDemoClick }: HeroPcNavigationProps) {
           >
             <img src={githubIcon} alt="" />
           </a>
-          <span className="hero-pc__nav-cta-shell" style={{ width: `${160 * revealProgress}px`, opacity: revealProgress }}>
+          <span className="hero-pc__nav-cta-shell" style={{ width: `${160 * revealProgress}px` }}>
             <button
               className="hero-pc__nav-cta"
               type="button"
               onClick={onDemoClick}
-              style={{ transform: `translateX(${160 * (1 - revealProgress)}px)` }}
+              style={{ opacity: revealProgress, transform: `translateX(${160 * (1 - revealProgress)}px)` }}
             >
               <img src={ctaArrow} alt="" />
               <span>立即体验Demo</span>

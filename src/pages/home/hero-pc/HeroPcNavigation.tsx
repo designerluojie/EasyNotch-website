@@ -29,6 +29,7 @@ export function HeroPcNavigation({ onDemoClick }: HeroPcNavigationProps) {
 
   const width = 680 + (Math.min(scrollY, 500) / 500) * 320;
   const revealProgress = Math.min(scrollY, 300) / 300;
+  const navigationPadding = 32 * revealProgress;
 
   return (
     <BorderGlow
@@ -38,9 +39,13 @@ export function HeroPcNavigation({ onDemoClick }: HeroPcNavigationProps) {
       className="hero-pc__navigation"
       style={{ width: `${width}px` }}
     >
-      <nav className="hero-pc__navigation-content" aria-label="主导航">
+      <nav
+        className="hero-pc__navigation-content"
+        aria-label="主导航"
+        style={{ paddingLeft: `${navigationPadding}px`, paddingRight: `${navigationPadding}px` }}
+      >
         <div className="hero-pc__navigation-left">
-          <span className="hero-pc__nav-logo-shell" style={{ width: `${40 * revealProgress}px` }}>
+          <span className="hero-pc__nav-logo-shell" style={{ width: `${40 * revealProgress}px`, opacity: revealProgress }}>
             <img className="hero-pc__nav-logo" src={productMark} alt="" style={{ transform: `translateX(${-40 * (1 - revealProgress)}px)` }} />
           </span>
           <span className="hero-pc__brand">{SITE_COPY.productName}</span>
@@ -55,7 +60,7 @@ export function HeroPcNavigation({ onDemoClick }: HeroPcNavigationProps) {
           >
             <img src={githubIcon} alt="" />
           </a>
-          <span className="hero-pc__nav-cta-shell" style={{ width: `${160 * revealProgress}px` }}>
+          <span className="hero-pc__nav-cta-shell" style={{ width: `${160 * revealProgress}px`, opacity: revealProgress }}>
             <button
               className="hero-pc__nav-cta"
               type="button"

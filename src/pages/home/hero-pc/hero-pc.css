@@ -69,10 +69,11 @@
 .hero-pc__nav-cta-shell {
   display: block;
   height: 40px;
+  width: 40px;
   flex-shrink: 0;
-  overflow: hidden;
-  will-change: width, opacity;
-  transition: width var(--nav-reveal-duration) ease, opacity var(--nav-reveal-duration) ease;
+  overflow: visible;
+  will-change: margin, opacity;
+  transition: margin var(--nav-reveal-duration) ease, opacity var(--nav-reveal-duration) ease;
 }
 
 .hero-pc__nav-logo {
@@ -80,11 +81,11 @@
   width: 40px;
   height: 40px;
   max-width: none;
-  transition: transform var(--nav-reveal-duration) ease, opacity var(--nav-reveal-duration) ease;
 }
 
 .hero-pc__nav-cta-shell {
   height: 40px;
+  width: 160px;
 }
 
 .hero-pc__nav-cta {

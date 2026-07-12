@@ -47,7 +47,7 @@ export function HeroPcNavigation({ onDemoClick }: HeroPcNavigationProps) {
           <span className="hero-pc__nav-logo-shell" style={{ opacity: revealProgress }}>
             <img className="hero-pc__nav-logo" src={productMark} alt="" />
           </span>
-          <span className="hero-pc__brand" style={{ transform: `translate(${92 * movementProgress}px, -50%)` }}>
+          <span className="hero-pc__brand" style={{ transform: `translate(${60 * movementProgress}px, -50%)` }}>
             {SITE_COPY.productName}
           </span>
         </div>
@@ -58,7 +58,7 @@ export function HeroPcNavigation({ onDemoClick }: HeroPcNavigationProps) {
             target="_blank"
             rel="noreferrer"
             aria-label="GitHub"
-            style={{ transform: `translate(${-216 * movementProgress}px, -50%)` }}
+            style={{ transform: `translate(${-184 * movementProgress}px, -50%)` }}
           >
             <img src={githubIcon} alt="" />
           </a>

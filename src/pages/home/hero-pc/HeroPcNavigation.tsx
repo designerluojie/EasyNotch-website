@@ -28,7 +28,7 @@ export function HeroPcNavigation({ onDemoClick }: HeroPcNavigationProps) {
   }, []);
 
   const width = 680 + (Math.min(scrollY, 500) / 500) * 320;
-  const revealProgress = Math.min(scrollY, 300) / 300;
+  const revealProgress = scrollY >= 500 ? 1 : 0;
 
   return (
     <BorderGlow

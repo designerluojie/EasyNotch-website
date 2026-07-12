@@ -71,6 +71,7 @@
   flex-shrink: 0;
   overflow: hidden;
   will-change: width, opacity;
+  transition: width 280ms ease, opacity 280ms ease;
 }
 
 .hero-pc__nav-logo {
@@ -78,7 +79,7 @@
   width: 40px;
   height: 40px;
   max-width: none;
-  transition: transform 80ms linear;
+  transition: transform 280ms ease, opacity 280ms ease;
 }
 
 .hero-pc__nav-cta-shell {
@@ -101,7 +102,7 @@
   font-weight: 500;
   line-height: 24px;
   cursor: pointer;
-  transition: transform 80ms linear, background-color 160ms ease;
+  transition: transform 280ms ease, opacity 280ms ease, background-color 160ms ease;
 }
 
 .hero-pc__nav-cta:hover {

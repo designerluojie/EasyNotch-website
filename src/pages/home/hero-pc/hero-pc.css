@@ -103,7 +103,7 @@
   padding: 0;
   border: 0;
   border-radius: 14px;
-  background: rgba(255, 255, 255, 0.1);
+  background: transparent;
   color: #fff;
   font-size: 16px;
   font-weight: 500;
@@ -133,7 +133,7 @@
 }
 
 .hero-pc__nav-cta:hover {
-  background: rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.04);
 }
 
 .hero-pc__nav-cta:active {

@@ -140,6 +140,19 @@
   background: transparent;
 }
 
+.hero-pc__nav-star-border .border-gradient-bottom,
+.hero-pc__nav-star-border .border-gradient-top {
+  height: 18%;
+}
+
+.hero-pc__nav-star-border .border-gradient-bottom {
+  bottom: -3px;
+}
+
+.hero-pc__nav-star-border .border-gradient-top {
+  top: -3px;
+}
+
 .hero-pc__nav-star-border .hero-pc__nav-cta {
   position: static;
   width: 100%;

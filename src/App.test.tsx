@@ -1,4 +1,4 @@
-import { act, render, screen } from "@testing-library/react";
+import { act, fireEvent, render, screen } from "@testing-library/react";
 import { App } from "./App";
 import { vi } from "vitest";
 
@@ -57,7 +57,6 @@ describe("App shell", () => {
     expect(screen.getByRole("button", { name: "暂停" })).toHaveClass(
       "showcase-notch__pause--compact",
     );
-    expect(screen.queryByRole("tab", { name: "文件暂存" })).not.toBeInTheDocument();
   });
 
   it("advances the music playback label once per second and resets after one minute", () => {
@@ -76,5 +75,38 @@ describe("App shell", () => {
     } finally {
       vi.useRealTimers();
     }
+  });
+
+  it("switches the showcase panel between static feature states", async () => {
+    render(<App />);
+
+    const settings = screen.getByRole("button", { name: "设置" });
+    const panel = screen.getByTestId("showcase-notch-panel");
+
+    expect(screen.getByRole("tab", { name: "音乐" })).toHaveAttribute(
+      "aria-selected",
+      "true",
+    );
+    expect(panel).toHaveAttribute("data-active-tab", "music");
+    expect(panel).toHaveAttribute("data-panel-height", "90");
+
+    fireEvent.click(screen.getByRole("tab", { name: "AI Chat" }));
+
+    expect(panel).toHaveAttribute("data-active-tab", "ai");
+    expect(panel).toHaveAttribute("data-panel-height", "300");
+    expect(screen.getByText("请输入")).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: "设置" })).toBe(settings);
+
+    fireEvent.click(screen.getByRole("tab", { name: "剪贴板" }));
+
+    expect(panel).toHaveAttribute("data-active-tab", "clipboard");
+    expect(panel).toHaveAttribute("data-panel-height", "135");
+    expect(screen.getByText("luojie@163.com")).toBeInTheDocument();
+
+    fireEvent.click(screen.getByRole("tab", { name: "番茄钟" }));
+
+    expect(panel).toHaveAttribute("data-active-tab", "tomato");
+    expect(panel).toHaveAttribute("data-panel-height", "222");
+    expect(screen.getByText("今日已累计专注 24 分钟")).toBeInTheDocument();
   });
 });

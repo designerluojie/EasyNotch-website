@@ -25,6 +25,7 @@ describe("App shell", () => {
     expect(screen.getByTestId("notch-shell")).toHaveAttribute("data-width", "435");
     expect(screen.getByTestId("notch-shell")).toHaveAttribute("data-height", "90");
     expect(screen.getByTestId("notch-shell")).toHaveClass("showcase-notch--laptop-scaled");
+    expect(screen.getByTestId("notch-shell")).toHaveClass("showcase-notch--screen-aligned");
     expect(screen.getByTestId("notch-content")).toBeInTheDocument();
     expect(screen.getByTestId("notch-shell")).toHaveAttribute("data-top-inset", "9");
     expect(screen.getByTestId("notch-shell")).toHaveAttribute("data-top-control-x", "5.85");

@@ -35,8 +35,9 @@
   --notch-top-control-x: 5.85px;
   --notch-top-control-y: 5.0625px;
   --notch-bottom-radius: 27px;
+  --notch-screen-top-offset: 13.31px;
   position: absolute;
-  top: 2.43%;
+  top: calc(var(--notch-screen-top-offset) * var(--notch-scale, 1));
   left: 50%;
   width: 48.3333%;
   aspect-ratio: 435 / 90;

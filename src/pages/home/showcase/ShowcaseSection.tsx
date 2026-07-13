@@ -66,7 +66,7 @@ function MusicNotch() {
   return (
     <div
       ref={shellRef}
-      className="showcase-notch showcase-notch--laptop-scaled"
+      className="showcase-notch showcase-notch--laptop-scaled showcase-notch--screen-aligned"
       data-testid="notch-shell"
       data-width="435"
       data-height="90"

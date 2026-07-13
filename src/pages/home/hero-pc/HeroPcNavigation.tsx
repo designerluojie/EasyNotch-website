@@ -70,17 +70,11 @@ export function HeroPcNavigation({ onDemoClick }: HeroPcNavigationProps) {
           <img src={githubIcon} alt="" />
         </a>
 
-        <StarBorder
-          as="button"
-          type="button"
-          color="white"
-          speed="5s"
-          thickness={2}
-          className="hero-pc__nav-star-border"
-          onClick={onDemoClick}
-        >
-          <img src={ctaArrow} alt="" />
-          <span>立即体验Demo</span>
+        <StarBorder as="div" color="white" speed="6s" thickness={3} className="hero-pc__nav-star-border">
+          <button className="hero-pc__nav-cta" type="button" onClick={onDemoClick}>
+            <img src={ctaArrow} alt="" />
+            <span>立即体验Demo</span>
+          </button>
         </StarBorder>
       </div>
     </nav>

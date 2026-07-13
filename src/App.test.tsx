@@ -9,6 +9,6 @@ describe("App shell", () => {
     expect(screen.getByRole("navigation", { name: "主导航" })).toBeInTheDocument();
     expect(screen.getByRole("heading", { name: "随手可用的效率入口" })).toBeInTheDocument();
     expect(screen.getAllByRole("button", { name: "立即体验Demo" })).toHaveLength(2);
-    expect(document.querySelectorAll(".star-border-container")).toHaveLength(2);
+    expect(document.querySelectorAll(".border-glow-card")).toHaveLength(2);
   });
 });

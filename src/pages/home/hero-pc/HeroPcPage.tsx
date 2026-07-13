@@ -4,7 +4,8 @@ import ctaArrow from "../../../assets/figma/hero-pc/cta-arrow.svg";
 import { getDownloadUrl, SITE_COPY } from "../../../config/site";
 import { HeroPcBackground } from "./HeroPcBackground";
 import { HeroPcNavigation } from "./HeroPcNavigation";
-import StarBorder from "./StarBorder";
+import BorderGlow from "./BorderGlow";
+import { HERO_BORDER_GLOW_COLORS } from "./hero-border-glow-config";
 import "./hero-pc.css";
 
 export function HeroPcPage() {
@@ -39,12 +40,17 @@ export function HeroPcPage() {
           <br />
           {SITE_COPY.heroDescription[1]}
         </p>
-        <StarBorder as="div" color="white" speed="6s" thickness={1} className="hero-pc__cta-surface">
+        <BorderGlow
+          backgroundColor="#141119"
+          borderRadius={24}
+          colors={[...HERO_BORDER_GLOW_COLORS]}
+          className="hero-pc__cta-surface"
+        >
           <button className="hero-pc__cta" type="button" onClick={handleDemoClick}>
             <img src={ctaArrow} alt="" />
             <span>立即体验Demo</span>
           </button>
-        </StarBorder>
+        </BorderGlow>
       </div>
       {notice ? <div className="hero-pc__notice" role="status">{notice}</div> : null}
     </section>

@@ -107,40 +107,61 @@
   font-size: 16px;
   font-weight: 500;
   line-height: 24px;
-  opacity: 0;
+  opacity: 1;
   cursor: pointer;
 }
 
-.hero-pc__nav-star-border {
+.hero-pc__nav-cta-surface {
   position: absolute;
   top: 50%;
   right: 32px;
   width: 160px;
   height: 40px;
   box-sizing: border-box;
-  padding: 1px 0 !important;
   opacity: 0;
   transform: translateY(-50%);
   transition: opacity var(--nav-transition-duration) ease;
 }
 
-.hero-pc__nav-star-border .inner-content,
-.hero-pc__cta-surface .inner-content {
+.hero-pc__nav-cta-surface .border-glow-inner,
+.hero-pc__cta-surface .border-glow-inner {
+  width: 100%;
+  height: 100%;
+}
+
+.hero-pc__nav-cta-surface .hero-pc__nav-cta {
+  position: static;
+  width: 100%;
+  height: 100%;
+  transform: none;
+}
+
+.hero-pc__cta-surface {
+  width: 320px;
+  height: 70px;
+  box-sizing: border-box;
+}
+
+.hero-pc__navigation--revealed .hero-pc__nav-cta-surface {
+  opacity: 1;
+}
+
+.hero-pc__nav-cta-surface .border-glow-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 14px;
+}
+
+.hero-pc__cta-surface .border-glow-inner {
   display: flex;
   width: 100%;
   height: 100%;
   align-items: center;
   justify-content: center;
-  padding: 0;
-  border-radius: 14px;
-}
-
-.hero-pc__nav-star-border .hero-pc__nav-cta {
-  position: static;
-  width: 100%;
-  height: 100%;
-  opacity: 1;
-  transform: none;
+  overflow: hidden;
+  border-radius: 24px;
 }
 
 .hero-pc__nav-cta img {
@@ -151,10 +172,6 @@
 
 .hero-pc__navigation--revealed .hero-pc__nav-logo,
 .hero-pc__navigation--revealed .hero-pc__nav-cta {
-  opacity: 1;
-}
-
-.hero-pc__navigation--revealed .hero-pc__nav-star-border {
   opacity: 1;
 }
 
@@ -228,17 +245,6 @@
   line-height: 40px;
   cursor: pointer;
   transition: background-color 160ms ease, transform 160ms ease;
-}
-
-.hero-pc__cta-surface {
-  width: 320px;
-  height: 70px;
-  box-sizing: border-box;
-  padding: 1px 0 !important;
-}
-
-.hero-pc__cta-surface .inner-content {
-  border-radius: 24px;
 }
 
 .hero-pc__cta:hover {

@@ -3,6 +3,7 @@ import ctaArrow from "../../../assets/figma/hero-pc/cta-arrow.svg";
 import githubIcon from "../../../assets/figma/hero-pc/github.svg";
 import productMark from "../../../assets/figma/hero-pc/product-mark.svg";
 import { SITE_COPY } from "../../../config/site";
+import StarBorder from "./StarBorder";
 
 interface HeroPcNavigationProps {
   onDemoClick: () => void;
@@ -67,10 +68,12 @@ export function HeroPcNavigation({ onDemoClick }: HeroPcNavigationProps) {
           <img src={githubIcon} alt="" />
         </a>
 
-        <button className="hero-pc__nav-cta" type="button" onClick={onDemoClick}>
-          <img src={ctaArrow} alt="" />
-          <span>立即体验Demo</span>
-        </button>
+        <StarBorder as="div" color="white" speed="6s" thickness={1} className="hero-pc__nav-star-border">
+          <button className="hero-pc__nav-cta" type="button" onClick={onDemoClick}>
+            <img src={ctaArrow} alt="" />
+            <span>立即体验Demo</span>
+          </button>
+        </StarBorder>
       </div>
     </nav>
   );

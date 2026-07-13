@@ -5,6 +5,7 @@ test.describe("PC hero", () => {
     await page.setViewportSize({ width: 1440, height: 800 });
     await page.goto("/");
 
+    await expect(page.getByRole("navigation", { name: "主导航" })).toBeVisible();
     await expect(page.getByRole("heading", { name: "随手可用的效率入口" })).toBeVisible();
     await expect(page.locator(".hero-pc__cta")).toBeVisible();
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);

@@ -128,7 +128,7 @@ function MusicNotch() {
           <div className="showcase-notch__controls">
             <div className="showcase-notch__progress" aria-label="播放进度">
               <span className="showcase-notch__progress-line">
-                <span />
+                <span className="showcase-notch__progress-fill" />
               </span>
               <span
                 className="showcase-notch__time showcase-notch__time--current"

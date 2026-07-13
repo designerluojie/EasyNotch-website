@@ -118,7 +118,6 @@
   width: 160px;
   height: 40px;
   box-sizing: border-box;
-  padding: 1px 0 !important;
   opacity: 0;
   transform: translateY(-50%);
   transition: opacity var(--nav-transition-duration) ease;
@@ -139,11 +138,6 @@
   border: 0;
   border-radius: 14px;
   background: transparent;
-}
-
-.hero-pc__nav-star-border .border-gradient-bottom,
-.hero-pc__nav-star-border .border-gradient-top {
-  height: 16%;
 }
 
 .hero-pc__nav-star-border .hero-pc__nav-cta {

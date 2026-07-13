@@ -3,8 +3,6 @@ import ctaArrow from "../../../assets/figma/hero-pc/cta-arrow.svg";
 import githubIcon from "../../../assets/figma/hero-pc/github.svg";
 import productMark from "../../../assets/figma/hero-pc/product-mark.svg";
 import { SITE_COPY } from "../../../config/site";
-import BorderGlow from "./BorderGlow";
-import { HERO_BORDER_GLOW_COLORS } from "./hero-border-glow-config";
 
 interface HeroPcNavigationProps {
   onDemoClick: () => void;
@@ -32,13 +30,7 @@ export function HeroPcNavigation({ onDemoClick }: HeroPcNavigationProps) {
   const revealProgress = scrollY >= 500 ? 1 : 0;
 
   return (
-    <BorderGlow
-      backgroundColor="#141119"
-      borderRadius={24}
-      colors={[...HERO_BORDER_GLOW_COLORS]}
-      className="hero-pc__navigation"
-      style={{ width: `${width}px` }}
-    >
+    <div className="hero-pc__navigation" style={{ width: `${width}px` }}>
       <nav
         className="hero-pc__navigation-content"
         aria-label="主导航"
@@ -77,6 +69,6 @@ export function HeroPcNavigation({ onDemoClick }: HeroPcNavigationProps) {
           </span>
         </div>
       </nav>
-    </BorderGlow>
+    </div>
   );
 }

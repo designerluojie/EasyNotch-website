@@ -1,7 +1,7 @@
 .hero-pc {
   position: relative;
   width: 100%;
-  min-height: 1800px;
+  min-height: 800px;
   overflow: hidden;
   isolation: isolate;
   background: #060508;
@@ -213,7 +213,7 @@
   position: relative;
   z-index: 1;
   display: flex;
-  min-height: 1800px;
+  min-height: 800px;
   flex-direction: column;
   align-items: center;
   padding-top: 240px;

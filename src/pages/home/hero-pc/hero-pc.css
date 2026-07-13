@@ -100,7 +100,7 @@
   justify-content: center;
   gap: 4px;
   padding: 0;
-  border: 0;
+  border: 1px solid rgba(255, 255, 255, 0.05);
   border-radius: 14px;
   background: rgba(255, 255, 255, 0.1);
   color: #fff;
@@ -118,6 +118,7 @@
   width: 160px;
   height: 40px;
   box-sizing: border-box;
+  border-radius: 14px;
   opacity: 0;
   transform: translateY(-50%);
   transition: opacity var(--nav-transition-duration) ease;

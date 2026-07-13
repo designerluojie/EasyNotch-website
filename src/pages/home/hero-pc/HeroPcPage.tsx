@@ -5,6 +5,7 @@ import { getDownloadUrl, SITE_COPY } from "../../../config/site";
 import { HeroPcBackground } from "./HeroPcBackground";
 import { HeroPcNavigation } from "./HeroPcNavigation";
 import BorderGlow from "./BorderGlow";
+import GradualBlur from "./GradualBlur";
 import { HERO_BORDER_GLOW_COLORS } from "./hero-border-glow-config";
 import "./hero-pc.css";
 
@@ -32,6 +33,7 @@ export function HeroPcPage() {
     <section className="hero-pc" aria-labelledby="hero-pc-title">
       <HeroPcBackground />
       <HeroPcNavigation onDemoClick={handleDemoClick} />
+      <GradualBlur position="bottom" target="page" />
       <div className="hero-pc__content">
         <img className="hero-pc__product-mark" src={productMark} alt="" />
         <h1 id="hero-pc-title">{SITE_COPY.heroTitle}</h1>

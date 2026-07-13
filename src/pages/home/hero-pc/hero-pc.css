@@ -142,15 +142,15 @@
 
 .hero-pc__nav-star-border .border-gradient-bottom,
 .hero-pc__nav-star-border .border-gradient-top {
-  height: 18%;
+  height: 12%;
 }
 
 .hero-pc__nav-star-border .border-gradient-bottom {
-  bottom: -3px;
+  bottom: -2px;
 }
 
 .hero-pc__nav-star-border .border-gradient-top {
-  top: -3px;
+  top: -2px;
 }
 
 .hero-pc__nav-star-border .hero-pc__nav-cta {

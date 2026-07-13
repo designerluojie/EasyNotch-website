@@ -30,9 +30,10 @@ export function HeroPcPage() {
   };
 
   return (
-    <section className="hero-pc" aria-labelledby="hero-pc-title">
-      <HeroPcBackground />
+    <>
       <HeroPcNavigation onDemoClick={handleDemoClick} />
+      <section className="hero-pc" aria-labelledby="hero-pc-title">
+      <HeroPcBackground />
       <GradualBlur position="bottom" target="page" />
       <div className="hero-pc__content">
         <img className="hero-pc__product-mark" src={productMark} alt="" />
@@ -55,6 +56,7 @@ export function HeroPcPage() {
         </BorderGlow>
       </div>
       {notice ? <div className="hero-pc__notice" role="status">{notice}</div> : null}
-    </section>
+      </section>
+    </>
   );
 }

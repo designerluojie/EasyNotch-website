@@ -141,6 +141,11 @@
   background: transparent;
 }
 
+.hero-pc__nav-star-border .border-gradient-bottom,
+.hero-pc__nav-star-border .border-gradient-top {
+  height: 16%;
+}
+
 .hero-pc__nav-star-border .hero-pc__nav-cta {
   position: static;
   width: 100%;

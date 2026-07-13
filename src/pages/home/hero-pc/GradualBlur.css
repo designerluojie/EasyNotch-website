@@ -1,13 +1,17 @@
-.gradual-blur {
-  isolation: isolate;
-  overflow: hidden;
-}
-
+/* Directly reused from React Bits Gradual Blur. */
 .gradual-blur-inner {
   position: relative;
   width: 100%;
   height: 100%;
-  pointer-events: none;
+}
+
+.gradual-blur-inner > div {
+  -webkit-backdrop-filter: inherit;
+  backdrop-filter: inherit;
+}
+
+.gradual-blur {
+  isolation: isolate;
 }
 
 @supports not (backdrop-filter: blur(1px)) {

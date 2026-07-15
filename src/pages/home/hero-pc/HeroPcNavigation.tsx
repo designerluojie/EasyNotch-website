@@ -5,7 +5,7 @@ import productMark from "../../../assets/figma/hero-pc/product-mark.svg";
 import { SITE_COPY } from "../../../config/site";
 import BorderGlow from "./BorderGlow";
 import { HERO_BORDER_GLOW_COLORS } from "./hero-border-glow-config";
-import StarBorder from "./StarBorder";
+import { SpotlightCard } from "./SpotlightCard";
 
 interface HeroPcNavigationProps {
   onDemoClick: () => void;
@@ -23,18 +23,31 @@ export function HeroPcNavigation({ onDemoClick }: HeroPcNavigationProps) {
   useEffect(() => {
     let revealTimer: number | null = null;
     let frame = 0;
+    let wasExpanded = false;
 
     const updateNavigationState = () => {
       cancelAnimationFrame(frame);
       frame = requestAnimationFrame(() => {
         const nextExpanded = window.scrollY >= NAV_TRIGGER_SCROLL;
         setIsExpanded(nextExpanded);
-        if (revealTimer !== null) window.clearTimeout(revealTimer);
         if (!nextExpanded) {
+          if (revealTimer !== null) window.clearTimeout(revealTimer);
+          revealTimer = null;
+          wasExpanded = false;
           setIsRevealed(false);
           return;
         }
-        revealTimer = window.setTimeout(() => setIsRevealed(true), NAV_TRANSITION_MS);
+
+        // Start the reveal cadence only when entering the expanded state. Keeping
+        // this timer independent from subsequent scroll events prevents fast
+        // scrolling from continually postponing the logo and CTA animation.
+        if (!wasExpanded) {
+          wasExpanded = true;
+          revealTimer = window.setTimeout(() => {
+            setIsRevealed(true);
+            revealTimer = null;
+          }, NAV_TRANSITION_MS);
+        }
       });
     };
 
@@ -70,12 +83,12 @@ export function HeroPcNavigation({ onDemoClick }: HeroPcNavigationProps) {
           <img src={githubIcon} alt="" />
         </a>
 
-        <StarBorder as="div" color="white" speed="6s" thickness={3} className="hero-pc__nav-star-border">
+        <SpotlightCard className="hero-pc__nav-spotlight" spotlightColor="rgba(255, 255, 255, 0.16)">
           <button className="hero-pc__nav-cta" type="button" onClick={onDemoClick}>
             <img src={ctaArrow} alt="" />
             <span>立即体验Demo</span>
           </button>
-        </StarBorder>
+        </SpotlightCard>
       </div>
     </nav>
   );

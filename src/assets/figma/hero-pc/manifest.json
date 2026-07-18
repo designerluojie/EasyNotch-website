@@ -1,0 +1,32 @@
+{
+  "frame": {
+    "fileKey": "sPAqmRh7r6Z8K2sXtQtjye",
+    "nodeId": "640:6587"
+  },
+  "exports": {
+    "productMark": {
+      "nodeId": "640:6595",
+      "name": "切图文件",
+      "format": "svg",
+      "renderWidth": 128,
+      "renderHeight": 128,
+      "source": "https://www.figma.com/api/mcp/asset/bb3d77b8-d2bb-496c-903e-fd48fa1060c1"
+    },
+    "github": {
+      "nodeId": "640:6616",
+      "name": "切图文件",
+      "format": "svg",
+      "renderWidth": 32,
+      "renderHeight": 32,
+      "source": "https://www.figma.com/api/mcp/asset/e5ba40c3-7c9f-4a86-868b-19b844cbc602"
+    },
+    "ctaArrow": {
+      "nodeId": "640:6608",
+      "name": "Frame",
+      "format": "svg",
+      "renderWidth": 32,
+      "renderHeight": 32,
+      "source": "https://www.figma.com/api/mcp/asset/82769a38-6e6c-410c-8193-49fbc5f5300d"
+    }
+  }
+}

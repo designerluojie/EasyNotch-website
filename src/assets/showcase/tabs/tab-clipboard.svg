@@ -1,0 +1,6 @@
+<svg preserveAspectRatio="none" width="100%" height="100%" overflow="visible" style="display: block;" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Frame">
+<path id="Vector" d="M15 1.99997L20 6.99997" stroke="var(--stroke-0, white)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Subtract" d="M15 1.00003C15.5523 1.00006 16 1.44777 16 2.00003V6.00003H20C20.5523 6.00006 21 6.44777 21 7.00003V21C21 22.1046 20.1045 23 19 23H5C3.89545 23 3.00002 22.1046 3 21V3.00003C3 1.89546 3.89543 1.00003 5 1.00003H15ZM12 9.50003C11.4477 9.50003 11 9.94775 11 10.5V13H8.5C7.94772 13 7.5 13.4477 7.5 14C7.50002 14.5523 7.94773 15 8.5 15H11V17.5C11 18.0523 11.4477 18.5 12 18.5C12.5523 18.5 13 18.0523 13 17.5V15H15.5C16.0522 15 16.5 14.5523 16.5 14C16.5 13.4478 16.0523 13.0001 15.5 13H13V10.5C13 9.94775 12.5523 9.50003 12 9.50003Z" fill="var(--fill-0, white)"/>
+</g>
+</svg>

@@ -1,0 +1,99 @@
+.contact-section {
+  position: relative;
+  min-height: 498px;
+  overflow: hidden;
+  background: #060508;
+  color: #fff;
+}
+
+.contact-section h2 {
+  margin: 0;
+  padding-top: 80px;
+  color: #fff;
+  font-family: "PingFang SC", "Helvetica Neue", Arial, sans-serif;
+  font-size: 44px;
+  font-weight: 600;
+  line-height: normal;
+  text-align: center;
+}
+
+.contact-section__mobile-break { display: none; }
+
+.contact-section__email {
+  position: absolute;
+  top: 182px;
+  left: 50%;
+  display: flex;
+  width: 388px;
+  height: 70px;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 0 24px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.02);
+  color: #fff;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 40px;
+  transform: translateX(-50%);
+  transition: background-color 160ms ease, transform 160ms ease;
+}
+
+.contact-section__email:hover { background: rgba(255, 255, 255, 0.12); }
+.contact-section__email:active {
+  background: rgba(0, 0, 0, 0.08);
+  transform: translateX(-50%);
+}
+
+.contact-section__163 {
+  display: block;
+  width: 32px;
+  height: 30px;
+  flex: 0 0 auto;
+}
+
+.contact-section__toast {
+  position: fixed;
+  z-index: 10;
+  top: 104px;
+  left: 50%;
+  padding: 10px 18px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.05);
+  -webkit-backdrop-filter: blur(24px);
+  backdrop-filter: blur(24px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  color: #fff;
+  font-size: 14px;
+  transform: translateX(-50%);
+}
+
+@media (max-width: 600px) {
+  .contact-section { min-height: 420px; }
+  .contact-section h2 { padding-top: 48px; font-size: 28px; }
+  .contact-section__email { top: 138px; width: min(388px, calc(100vw - 32px)); font-size: 18px; }
+}
+
+@media (max-width: 760px) {
+  .contact-section { min-height: 400px; }
+
+  .contact-section h2 {
+    padding-top: 48px;
+    font-size: 28px;
+    line-height: 34px;
+  }
+
+  .contact-section__desktop-comma { display: none; }
+  .contact-section__mobile-break { display: block; }
+
+  .contact-section__email {
+    top: 166px;
+    width: min(336px, calc(100vw - 39px));
+    height: 70px;
+    font-size: 24px;
+    line-height: 40px;
+  }
+}

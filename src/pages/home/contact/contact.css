@@ -4,9 +4,25 @@
   overflow: hidden;
   background: #060508;
   color: #fff;
+  isolation: isolate;
+}
+
+.contact-section__diffuse {
+  position: absolute;
+  z-index: 0;
+  top: -508px;
+  left: 50%;
+  display: block;
+  width: 2949px;
+  height: 2373px;
+  max-width: none;
+  pointer-events: none;
+  transform: translateX(-50%);
 }
 
 .contact-section h2 {
+  position: relative;
+  z-index: 1;
   margin: 0;
   padding-top: 80px;
   color: #fff;
@@ -21,6 +37,7 @@
 
 .contact-section__email {
   position: absolute;
+  z-index: 1;
   top: 182px;
   left: 50%;
   display: flex;
@@ -69,6 +86,11 @@
   color: #fff;
   font-size: 14px;
   transform: translateX(-50%);
+}
+
+.contact-section__toast--failure {
+  border-color: rgba(255, 130, 130, 0.28);
+  background: rgba(182, 53, 53, 0.2);
 }
 
 @media (max-width: 600px) {

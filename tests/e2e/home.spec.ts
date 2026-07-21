@@ -12,8 +12,12 @@ test.describe("PC hero", () => {
 
     await page.screenshot({ path: testInfo.outputPath("hero-pc-1440.png"), fullPage: false });
 
+    const popupPromise = page.waitForEvent("popup");
     await page.locator(".hero-pc__cta").click();
-    await expect(page.getByRole("status")).toContainText("体验包暂未开放下载");
+    const popup = await popupPromise;
+    await expect(popup).toHaveURL(
+      "https://github.com/designerluojie/EasyNotch/releases/download/v1.0.4/EasyNotch-1.0.4.dmg",
+    );
   });
 });
 

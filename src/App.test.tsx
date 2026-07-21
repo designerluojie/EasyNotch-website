@@ -9,7 +9,12 @@ describe("App shell", () => {
     expect(screen.getByRole("main")).toBeInTheDocument();
     expect(screen.getByRole("navigation", { name: "主导航" })).toBeInTheDocument();
     expect(screen.getByRole("heading", { name: "随手可用的效率入口" })).toBeInTheDocument();
-    expect(screen.getAllByRole("button", { name: "立即体验Demo" })).toHaveLength(2);
+    expect(screen.getAllByRole("button", { name: "立即下载" })).toHaveLength(2);
+    expect(screen.getByTestId("contact-diffuse")).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: "GitHub" })).toHaveAttribute(
+      "href",
+      "https://github.com/designerluojie/EasyNotch",
+    );
     expect(document.querySelectorAll(".border-glow-card")).toHaveLength(1);
     expect(document.querySelectorAll(".spotlight-card")).toHaveLength(1);
   });
@@ -40,6 +45,25 @@ describe("App shell", () => {
     await waitFor(() => {
       expect(screen.getByRole("status")).toHaveTextContent("复制成功");
     });
+  });
+
+  it("reports an error when neither clipboard copy mechanism succeeds", async () => {
+    const originalExecCommand = document.execCommand;
+    const execCommand = vi.fn().mockReturnValue(false);
+    Object.assign(navigator, { clipboard: undefined });
+    Object.assign(document, { execCommand });
+
+    try {
+      render(<App />);
+      fireEvent.click(screen.getByRole("button", { name: /easynotch@163.com/ }));
+
+      await waitFor(() => {
+        expect(execCommand).toHaveBeenCalledWith("copy");
+        expect(screen.getByRole("alert")).toHaveTextContent("复制失败，请手动复制邮箱");
+      });
+    } finally {
+      Object.assign(document, { execCommand: originalExecCommand });
+    }
   });
 
   it("renders the second-screen music showcase as the only implemented module", () => {

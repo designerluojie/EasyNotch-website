@@ -121,6 +121,7 @@
   height: 40px;
   box-sizing: border-box;
   opacity: 0;
+  pointer-events: none;
   transform: translateY(-50%);
   transition: opacity var(--nav-transition-duration) ease;
 }
@@ -162,6 +163,7 @@
 
 .hero-pc__navigation--revealed .hero-pc__nav-spotlight {
   opacity: 1;
+  pointer-events: auto;
 }
 
 .hero-pc__cta-surface .border-glow-inner {
@@ -227,7 +229,6 @@
   color: #fff;
   font-size: 70px;
   font-weight: 600;
-  letter-spacing: -0.055em;
   line-height: 98px;
   white-space: nowrap;
 }

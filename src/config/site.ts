@@ -6,10 +6,13 @@ export const SITE_COPY = {
     "让你的Macbook刘海，真正有用起来。",
   ],
   contactEmail: "easynotch@163.com",
-  githubUrl: import.meta.env.VITE_GITHUB_URL || "https://github.com",
+  githubUrl: "https://github.com/designerluojie/EasyNotch",
 } as const;
+
+const DEFAULT_DOWNLOAD_URL =
+  "https://github.com/designerluojie/EasyNotch/releases/download/v1.0.4/EasyNotch-1.0.4.dmg";
 
 export function getDownloadUrl(): string | null {
   const value = import.meta.env.VITE_DOWNLOAD_URL;
-  return typeof value === "string" && value.trim().length > 0 ? value : null;
+  return typeof value === "string" && value.trim().length > 0 ? value : DEFAULT_DOWNLOAD_URL;
 }

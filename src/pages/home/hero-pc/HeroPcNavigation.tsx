@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import ctaArrow from "../../../assets/figma/hero-pc/cta-arrow.svg";
 import githubIcon from "../../../assets/figma/hero-pc/github.svg";
-import productMark from "../../../assets/figma/hero-pc/product-mark.svg";
+import productMark from "../../../assets/figma/hero-pc/product-mark.png";
 import { SITE_COPY } from "../../../config/site";
 import BorderGlow from "./BorderGlow";
 import { HERO_BORDER_GLOW_COLORS } from "./hero-border-glow-config";
@@ -111,7 +111,7 @@ export function HeroPcNavigation({ onDemoClick }: HeroPcNavigationProps) {
           <SpotlightCard className="hero-pc__nav-spotlight" spotlightColor="rgba(255, 255, 255, 0.16)">
             <button className="hero-pc__nav-cta" type="button" onClick={onDemoClick}>
               <img src={ctaArrow} alt="" />
-              <span>立即体验Demo</span>
+              <span>立即下载</span>
             </button>
           </SpotlightCard>
         )}

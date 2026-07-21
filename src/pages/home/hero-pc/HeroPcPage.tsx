@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import productMark from "../../../assets/figma/hero-pc/product-mark.svg";
 import ctaArrow from "../../../assets/figma/hero-pc/cta-arrow.svg";
 import { getDownloadUrl, SITE_COPY } from "../../../config/site";
+import { trackDownloadClick } from "../../../config/analytics";
 import { HeroPcBackground } from "./HeroPcBackground";
 import { HeroPcNavigation } from "./HeroPcNavigation";
 import BorderGlow from "./BorderGlow";
@@ -18,6 +19,8 @@ export function HeroPcPage() {
 
   const handleDemoClick = () => {
     const downloadUrl = getDownloadUrl();
+    trackDownloadClick(downloadUrl !== null);
+
     if (downloadUrl) {
       window.open(downloadUrl, "_blank", "noopener,noreferrer");
       return;

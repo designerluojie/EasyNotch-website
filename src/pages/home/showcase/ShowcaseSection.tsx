@@ -400,6 +400,7 @@ function NotchFeature({ activeTab, currentTime }: { activeTab: ShowcaseTabId; cu
 
 export function ShowcaseSection() {
   const { scale, shellRef } = useLaptopScaledNotch();
+  const tabsRef = useRef<HTMLDivElement>(null);
   const [activeTab, setActiveTab] = useState<ShowcaseTabId>("music");
   const [elapsedSeconds, setElapsedSeconds] = useState(0);
   const [visualHeight, setVisualHeight] = useState(90);
@@ -423,6 +424,20 @@ export function ShowcaseSection() {
 
     setActiveTab(nextTab);
     if (!isSameHeight) setVisualHeight(nextConfig.height);
+  };
+
+  const centerTab = (tabId: ShowcaseTabId) => {
+    const tabs = tabsRef.current;
+    const selectedTab = tabs?.querySelector<HTMLElement>(`[data-showcase-tab="${tabId}"]`);
+    if (!tabs || !selectedTab) return;
+
+    const targetLeft = selectedTab.offsetLeft - (tabs.clientWidth - selectedTab.offsetWidth) / 2;
+    if (typeof tabs.scrollTo === "function") {
+      tabs.scrollTo({ left: targetLeft, behavior: "smooth" });
+      return;
+    }
+
+    tabs.scrollLeft = targetLeft;
   };
 
   return (
@@ -473,15 +488,24 @@ export function ShowcaseSection() {
           </div>
         </div>
 
-        <div className="showcase-tabs" role="tablist" aria-label="Notch 功能">
+        <div
+          className="showcase-tabs"
+          role="tablist"
+          aria-label="Notch 功能"
+          ref={tabsRef}
+        >
           {showcaseTabs.map((tab) => (
             <button
               className={`showcase-tabs__item ${activeTab === tab.id ? "showcase-tabs__item--active" : ""}`}
               type="button"
               role="tab"
               aria-selected={activeTab === tab.id}
+              data-showcase-tab={tab.id}
               key={tab.id}
-              onClick={() => handleTabChange(tab.id)}
+              onClick={() => {
+                handleTabChange(tab.id);
+                centerTab(tab.id);
+              }}
             >
               <img src={tab.icon} alt="" aria-hidden="true" />
               <span>{tab.label}</span>

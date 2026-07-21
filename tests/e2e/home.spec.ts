@@ -12,7 +12,28 @@ test.describe("PC hero", () => {
 
     await page.screenshot({ path: testInfo.outputPath("hero-pc-1440.png"), fullPage: false });
 
+    const popupPromise = page.waitForEvent("popup");
     await page.locator(".hero-pc__cta").click();
-    await expect(page.getByRole("status")).toContainText("体验包暂未开放下载");
+    const popup = await popupPromise;
+    await expect(popup).toHaveURL(
+      "https://github.com/designerluojie/EasyNotch/releases/download/v1.0.4/EasyNotch-1.0.4.dmg",
+    );
+  });
+});
+
+test.describe("Mobile landing page", () => {
+  test("uses the mobile navigation and keeps the feature tabs within the viewport", async ({ page }) => {
+    await page.setViewportSize({ width: 375, height: 812 });
+    await page.goto("/");
+
+    const navigation = page.getByRole("navigation", { name: "主导航" });
+    await expect(navigation).toBeVisible();
+    await expect(navigation).toHaveCSS("width", "343px");
+    await expect(page.locator(".hero-pc__nav-logo")).toBeVisible();
+    await expect(page.locator(".showcase-section")).toHaveCSS("height", "444px");
+    expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+
+    await page.getByRole("tab", { name: "文件暂存" }).click();
+    await expect(page.getByTestId("showcase-notch-panel")).toHaveAttribute("data-active-tab", "file");
   });
 });

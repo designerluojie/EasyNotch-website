@@ -5,3 +5,9 @@ dist/
 .DS_Store
 test-results/
 *.tsbuildinfo
+playwright-report/
+blob-report/
+.env.local
+.env.*.local
+.idea/
+*.swp

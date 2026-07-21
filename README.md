@@ -4,4 +4,7 @@
 
 EasyNotch 是一款为 macOS 刘海屏打造的轻量效率工具；官网提供产品介绍、功能展示、版本下载与联系方式。
 
-本仓库仅用于官网部署与版本分发，不作为面向公众协作的开源项目或产品源码仓库维护。
+## 相关链接
+
+- 官网与下载：[easynotch.designbento.cn](https://easynotch.designbento.cn)
+- 应用程序 GitHub：[designerluojie/EasyNotch](https://github.com/designerluojie/EasyNotch)

@@ -71,18 +71,22 @@
   flex: 0 0 auto;
 }
 
-.contact-section__privacy {
+.contact-section__legal {
   position: absolute;
   z-index: 1;
-  top: 280px;
+  bottom: 34px;
   left: 50%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
   color: rgba(255, 255, 255, 0.68);
   font-size: 14px;
-  text-decoration: none;
   transform: translateX(-50%);
+  white-space: nowrap;
 }
 
-.contact-section__privacy:hover { color: #fff; text-decoration: underline; }
+.contact-section__legal a { color: inherit; text-decoration: none; }
+.contact-section__legal a:hover { color: #fff; text-decoration: underline; }
 
 .contact-section__toast {
   position: fixed;
@@ -132,5 +136,5 @@
     line-height: 40px;
   }
 
-  .contact-section__privacy { top: 250px; }
+  .contact-section__legal { bottom: 28px; font-size: 12px; }
 }

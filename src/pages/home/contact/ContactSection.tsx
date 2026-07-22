@@ -69,6 +69,7 @@ export function ContactSection() {
         <img className="contact-section__163" src={logo163} alt="" aria-hidden="true" />
         <span>easynotch@163.com</span>
       </button>
+      <a className="contact-section__privacy" href="/privacy/">隐私政策</a>
       {copyStatus && (
         <div
           className={`contact-section__toast contact-section__toast--${copyStatus}`}

@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="EasyNotch 隐私政策" />
+    <title>隐私政策 · EasyNotch</title>
+    <style>
+      :root {
+        color-scheme: light;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+        color: #18212f;
+        background: #f5f7fb;
+      }
+      * { box-sizing: border-box; }
+      body { margin: 0; line-height: 1.75; }
+      main { width: min(860px, calc(100% - 40px)); margin: 0 auto; padding: 56px 0 80px; }
+      a { color: #1769e0; }
+      header { margin-bottom: 36px; }
+      .brand { color: #1769e0; font-weight: 700; text-decoration: none; }
+      h1 { margin: 20px 0 8px; font-size: clamp(30px, 5vw, 44px); line-height: 1.2; letter-spacing: -0.03em; }
+      h2 { margin: 38px 0 12px; font-size: 21px; line-height: 1.35; }
+      p, li { font-size: 16px; }
+      .updated { color: #637085; font-size: 14px; }
+      .card { padding: 30px; border: 1px solid #e2e8f2; border-radius: 18px; background: #fff; box-shadow: 0 10px 35px rgba(27, 52, 91, 0.06); }
+      ul { padding-left: 24px; }
+      footer { margin-top: 42px; color: #637085; font-size: 14px; }
+      @media (max-width: 560px) { main { width: min(100% - 28px, 860px); padding-top: 30px; } .card { padding: 22px; } }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header>
+        <a class="brand" href="/">EasyNotch</a>
+        <h1>隐私政策</h1>
+        <p class="updated">最后更新：2026 年 7 月 22 日</p>
+      </header>
+
+      <article class="card">
+        <p>
+          本隐私政策适用于 EasyNotch macOS App Store 版本（以下简称“本应用”）。
+          我们重视你的隐私：本应用的核心功能在你的 Mac 本地运行，不会将你的剪贴板、文件或音乐播放信息上传至 EasyNotch 的服务器。
+        </p>
+
+        <h2>1. 本应用处理的信息</h2>
+        <ul>
+          <li><strong>本地功能数据：</strong>设置、剪贴板历史、暂存文件或文件夹的访问引用、番茄钟记录，以及 AI 对话的本地界面数据，会保存在你的设备上，以实现相应功能。</li>
+          <li><strong>剪贴板内容：</strong>在你开启并使用剪贴板历史功能期间，本应用会读取系统剪贴板，并在本地保存文字、富文本、图片、SVG、文件或文件夹引用等内容。你应避免将不希望留存在本机的敏感信息复制到剪贴板。</li>
+          <li><strong>音乐播放信息：</strong>在你使用音乐模块时，本应用会在获得 macOS 自动化授权后，读取 Apple Music 或 Spotify 的当前播放状态、歌曲名称、艺人、专辑、进度和封面，用于在刘海面板显示和提供播放控制。该信息不会发送给 EasyNotch。</li>
+        </ul>
+
+        <h2>2. AI Chat 与第三方 AI 服务</h2>
+        <p>
+          AI Chat 是可选功能。只有当你自行配置 API 密钥并主动发送请求时，本应用才会将你的提问、对话内容及你选择附带的图片或其他输入，直接发送给你选择的 AI 服务提供商（目前可能包括 DeepSeek、通义千问、OpenAI 或 Google Gemini）。这些服务将依其各自的隐私政策处理该等信息。
+        </p>
+        <p>
+          EasyNotch 不提供 AI 中转服务器，也不会代为接收或保存你的 API 密钥。API 密钥储存在 macOS Keychain 中；你可在本应用的 AI 配置中删除它们。
+        </p>
+
+        <h2>3. 网络连接、分析与追踪</h2>
+        <p>
+          本应用的 App Store 版本不使用行为分析或跨应用追踪。使用 AI Chat 时会连接至你自行选择的 AI 服务；Spotify 的歌曲封面可能会从 Spotify 提供的 HTTPS 地址下载，仅用于本地展示。
+        </p>
+        <p>我们不会出售你的个人信息，也不会将本应用中的数据用于广告定向或跨应用追踪。</p>
+
+        <h2>4. 权限说明</h2>
+        <ul>
+          <li><strong>剪贴板：</strong>用于保存和再次使用剪贴板历史。</li>
+          <li><strong>文件访问：</strong>仅用于你主动拖入、选择或再次导出的文件及文件夹。</li>
+          <li><strong>自动化（Apple Events）：</strong>仅用于与 Apple Music 和 Spotify 交互以显示播放信息及执行播放控制。</li>
+        </ul>
+        <p>你可在 macOS“系统设置”中管理本应用的相关权限；拒绝某项权限只会影响对应功能。</p>
+
+        <h2>5. 信息保存与删除</h2>
+        <p>
+          本地数据会在实现功能所需的期间保留。你可以在本应用内清理剪贴板历史、移除暂存文件和删除 AI API 密钥；对于其他本地应用数据，也可以通过卸载本应用或清除其本地数据进行处理。请注意，原始文件是否可用也取决于它是否仍保存在你的设备中。
+        </p>
+
+        <h2>6. 数据安全与第三方服务</h2>
+        <p>
+          我们采用系统提供的本地存储与 Keychain 机制保护数据。通过 AI Chat 使用第三方服务时，数据安全、数据保存地点和保留期限由相应服务提供商决定；请在使用前阅读其适用的隐私政策，并根据你的所在地法规和需求自行判断是否使用。
+        </p>
+
+        <h2>7. 本政策的更新与联系我们</h2>
+        <p>
+          当功能或数据处理方式发生实质变化时，我们会在本页面更新本政策，并调整“最后更新”日期。如对隐私问题有任何疑问、意见或请求，请联系：<a href="mailto:easynotch@163.com">easynotch@163.com</a>。
+        </p>
+      </article>
+
+      <footer>© 2026 EasyNotch. All rights reserved.</footer>
+    </main>
+  </body>
+</html>

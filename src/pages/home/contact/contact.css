@@ -71,6 +71,19 @@
   flex: 0 0 auto;
 }
 
+.contact-section__privacy {
+  position: absolute;
+  z-index: 1;
+  top: 280px;
+  left: 50%;
+  color: rgba(255, 255, 255, 0.68);
+  font-size: 14px;
+  text-decoration: none;
+  transform: translateX(-50%);
+}
+
+.contact-section__privacy:hover { color: #fff; text-decoration: underline; }
+
 .contact-section__toast {
   position: fixed;
   z-index: 10;
@@ -118,4 +131,6 @@
     font-size: 24px;
     line-height: 40px;
   }
+
+  .contact-section__privacy { top: 250px; }
 }

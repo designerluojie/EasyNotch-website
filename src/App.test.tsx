@@ -11,10 +11,9 @@ describe("App shell", () => {
     expect(screen.getByRole("heading", { name: "随手可用的效率入口" })).toBeInTheDocument();
     expect(screen.getAllByRole("button", { name: "立即下载" })).toHaveLength(2);
     expect(screen.getByTestId("contact-diffuse")).toBeInTheDocument();
-    expect(screen.getByRole("link", { name: "GitHub" })).toHaveAttribute(
-      "href",
-      "https://github.com/designerluojie/EasyNotch",
-    );
+    screen.getAllByRole("link", { name: "GitHub" }).forEach((link) => {
+      expect(link).toHaveAttribute("href", "https://github.com/designerluojie/EasyNotch");
+    });
     expect(document.querySelectorAll(".border-glow-card")).toHaveLength(1);
     expect(document.querySelectorAll(".spotlight-card")).toHaveLength(1);
   });

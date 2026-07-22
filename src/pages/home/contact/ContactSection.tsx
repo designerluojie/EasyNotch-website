@@ -70,8 +70,11 @@ export function ContactSection() {
         <span>easynotch@163.com</span>
       </button>
       <div className="contact-section__legal">
+        <div className="contact-section__legal-links">
+          <a href="/privacy/">隐私政策</a>
+          <a href="https://github.com/designerluojie/EasyNotch">GitHub</a>
+        </div>
         <span>© 2026 EasyNotch. All rights reserved.</span>
-        <a href="/privacy/">隐私政策</a>
       </div>
       {copyStatus && (
         <div

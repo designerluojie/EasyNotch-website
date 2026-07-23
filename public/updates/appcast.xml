@@ -3,6 +3,24 @@
     <channel>
         <title>EasyNotch</title>
         <item>
+            <title>1.0.8</title>
+            <pubDate>Fri, 24 Jul 2026 00:41:27 +0800</pubDate>
+            <sparkle:version>19</sparkle:version>
+            <sparkle:shortVersionString>1.0.8</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
+            <enclosure url="https://easynotch.designbento.cn/updates/EasyNotch-1.0.8.dmg" length="3917206" type="application/octet-stream" sparkle:edSignature="ZkqT+PDOOl4rzCkpX3UtaMc47HtjWdZhTvocrFK22+t/3vvmS5WXlrDPrxvvimW7BK9D3f5vvnfyaqKg4SCGDA=="/>
+            <sparkle:deltas>
+                <enclosure url="https://easynotch.designbento.cn/updates/EasyNotch19-18.delta" sparkle:deltaFrom="18" length="298810" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="977840" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="SSd7pIdGKRL67DhKFxAEBH7v+5VzxUP2MRvQ60L6wVKNHMBDZ30zGr2Nwjkpo9usFRkcEYfbJXUFBIPmNF6ZBg=="/>
+                <enclosure url="https://easynotch.designbento.cn/updates/EasyNotch19-17.delta" sparkle:deltaFrom="17" length="296146" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="977840" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="VrnWDOBjq2fRZcUvOoP/EOibZSpytOQRbWO9lczSUeq/W+/LZmTfO7MOv/EUDfIqObjmM63x4v0gY3zEqt4/DA=="/>
+            </sparkle:deltas>
+            <description sparkle:format="markdown"><![CDATA[# EasyNotch 1.0.8
+
+- 修复文件暂存内容偶发消失的问题，避免错误进入拖拽 Hover 态。
+- 修复刘海快速收起后再次点击时的闪烁、无响应，以及 Hover 下拉效果丢失。
+- 支持在「关于」中检查、下载并安装新版本。
+]]></description>
+        </item>
+        <item>
             <title>1.0.7</title>
             <pubDate>Thu, 23 Jul 2026 17:48:12 +0800</pubDate>
             <sparkle:version>18</sparkle:version>

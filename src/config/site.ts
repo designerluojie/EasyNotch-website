@@ -10,7 +10,7 @@ export const SITE_COPY = {
 } as const;
 
 const DEFAULT_DOWNLOAD_URL =
-  "https://github.com/designerluojie/EasyNotch/releases/download/v1.0.7/EasyNotch-1.0.7.dmg";
+  "https://github.com/designerluojie/EasyNotch/releases/download/v1.0.8/EasyNotch-1.0.8.dmg";
 
 export function getDownloadUrl(): string | null {
   const value = import.meta.env.VITE_DOWNLOAD_URL;

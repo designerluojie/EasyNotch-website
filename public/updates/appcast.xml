@@ -1,0 +1,20 @@
+<?xml version="1.0" standalone="yes"?>
+<rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" version="2.0">
+    <channel>
+        <title>EasyNotch</title>
+        <item>
+            <title>1.0.6</title>
+            <pubDate>Thu, 23 Jul 2026 17:00:45 +0800</pubDate>
+            <sparkle:version>17</sparkle:version>
+            <sparkle:shortVersionString>1.0.6</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
+            <description sparkle:format="markdown"><![CDATA[# EasyNotch 1.0.6
+
+- 正式上线应用内更新：检查更新、下载进度、解压、确认安装与自动重启。
+- 更新已准备好时可选择稍后，本次启动内可直接安装，无需重复下载。
+- 优化更新提示与状态反馈。
+]]></description>
+            <enclosure url="https://easynotch.designbento.cn/updates/EasyNotch-1.0.6.dmg" length="3913964" type="application/octet-stream" sparkle:edSignature="ZSvePUyddR0RkMZLW8TFJ4XUdDxanWQz6r476ur7eb8ZBAenf6td7GgT3006wxTDn6K5HHbIzrw9STt3BtJXCg=="/>
+        </item>
+    </channel>
+</rss>

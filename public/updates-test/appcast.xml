@@ -4,6 +4,36 @@
         <title>EasyNotch</title>
         <item>
             <title>1.0.7</title>
+            <pubDate>Thu, 23 Jul 2026 15:25:50 +0800</pubDate>
+            <sparkle:version>10</sparkle:version>
+            <sparkle:shortVersionString>1.0.7</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
+            <description sparkle:format="markdown"><![CDATA[# EasyNotch 1.0.7 验收候选版
+
+- 验证 Sparkle 自动更新的下载、安装和重启提示流程。
+- 此版本仅用于发布前验收，不会作为正式版本发布。
+]]></description>
+            <enclosure url="https://easynotch.designbento.cn/updates-test/EasyNotch-1.0.7-build10.dmg" length="3912537" type="application/octet-stream" sparkle:edSignature="bVcv0YX0IX06oN+IHnhrZ8sipLBr2NBo6hO1QP3yEGlR+0jKzVaFCORZsA4AGVzvdw5VyOqlXaXPcmV4lCwKBQ=="/>
+            <sparkle:deltas>
+                <enclosure url="https://easynotch.designbento.cn/updates-test/EasyNotch10-9.delta" sparkle:deltaFrom="9" length="15906" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="977840" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="2votFrvAt8bmzmSH5lGbb1FKNfIvg7uH6O0mkF+TioE0TUMw+plsPLP6tOSJFFym6ovRBNxasc/ha/eUlT1WDg=="/>
+                <enclosure url="https://easynotch.designbento.cn/updates-test/EasyNotch10-8.delta" sparkle:deltaFrom="8" length="256910" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="977840" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="izIZIdj6tovgqFfHq6jKQQY7TnbJYrpYS5daZi0y2p7E94dxVP3hcCeaNdL4jk8jc4A/0hniV8ApP8/deaODBA=="/>
+                <enclosure url="https://easynotch.designbento.cn/updates-test/EasyNotch10-7.delta" sparkle:deltaFrom="7" length="254402" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="977840" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="blCyThshRWRc3nxUfEYy7LVPgxkOhOCU71MtNA2u3LPNoylUOjSEYYXVH50XOUKxW2F5Bz5ZpvG4iLfQe2uAAw=="/>
+            </sparkle:deltas>
+        </item>
+        <item>
+            <title>1.0.6</title>
+            <pubDate>Thu, 23 Jul 2026 15:22:20 +0800</pubDate>
+            <sparkle:version>9</sparkle:version>
+            <sparkle:shortVersionString>1.0.6</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
+            <enclosure url="https://easynotch.designbento.cn/updates-test/EasyNotch-1.0.6-build9.dmg" length="3912573" type="application/octet-stream" sparkle:edSignature="SrX73kqb9w3zAeZhdDYhJLoKaX8wk8ZMwBf/9czR3ugwuCD++oaCIGH6AOMzHc0QxBuzLF3iY6PB07Q5cEoxBg=="/>
+            <sparkle:deltas>
+                <enclosure url="https://easynotch.designbento.cn/updates-test/EasyNotch9-8.delta" sparkle:deltaFrom="8" length="256862" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="977840" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="D0zNg1BC+bMh+ZMUcmQnB/ELS8Y/ewHKjowBYDyznmHifZWrIiLHhWg6UUH3nsLUAZijlKkoKjvT8n0m3Ha4Ag=="/>
+                <enclosure url="https://easynotch.designbento.cn/updates-test/EasyNotch9-7.delta" sparkle:deltaFrom="7" length="257034" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="977840" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="UgUkomF3bRaI5ak+L3t5FIqbP2CcFlf1BfRuHgGnR4NKyPN9HaKCyUAYxqQUN3JO3+x0eoUNdCovJJq1Kv4wCA=="/>
+            </sparkle:deltas>
+        </item>
+        <item>
+            <title>1.0.7</title>
             <pubDate>Thu, 23 Jul 2026 15:03:47 +0800</pubDate>
             <sparkle:version>8</sparkle:version>
             <sparkle:shortVersionString>1.0.7</sparkle:shortVersionString>
@@ -17,14 +47,6 @@
             <sparkle:deltas>
                 <enclosure url="https://easynotch.designbento.cn/updates-test/EasyNotch8-7.delta" sparkle:deltaFrom="7" length="15890" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="977840" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="rlJPwpOW/oUrAVFN35voLdXt3ZW0+LW9djYrOkBWUHa8N4zm4r+/kHmhmb2vHIBZJZIyuPNuMAS0Jc38tlR9AA=="/>
             </sparkle:deltas>
-        </item>
-        <item>
-            <title>1.0.6</title>
-            <pubDate>Thu, 23 Jul 2026 14:55:58 +0800</pubDate>
-            <sparkle:version>7</sparkle:version>
-            <sparkle:shortVersionString>1.0.6</sparkle:shortVersionString>
-            <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
-            <enclosure url="https://easynotch.designbento.cn/updates-test/EasyNotch-1.0.6.dmg" length="3912981" type="application/octet-stream" sparkle:edSignature="hKbBKvN0g00vP8GYo6SWyYo5UIdsd39Qx1D/upGjEXzL9NKPo5EcXEioIJwkOqgz5v+N2/xeRo+5VP27BeH8Dg=="/>
         </item>
     </channel>
 </rss>

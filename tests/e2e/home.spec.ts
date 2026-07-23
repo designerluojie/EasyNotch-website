@@ -16,7 +16,7 @@ test.describe("PC hero", () => {
     await page.locator(".hero-pc__cta").click();
     const popup = await popupPromise;
     await expect(popup).toHaveURL(
-      "https://github.com/designerluojie/EasyNotch/releases/download/v1.0.4/EasyNotch-1.0.4.dmg",
+      "https://github.com/designerluojie/EasyNotch/releases/download/v1.0.5/EasyNotch-1.0.5.dmg",
     );
   });
 });

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useLayoutEffect, useRef, useState } from "react";
 import chevron from "../../../assets/faq/faq-chevron.svg";
 import "./faq.css";
 
@@ -25,6 +25,92 @@ const faqItems = [
   },
 ] as const;
 
+type FaqItem = (typeof faqItems)[number];
+
+function FaqItemCard({
+  item,
+  expanded,
+  hovered,
+  active,
+  onMouseEnter,
+  onMouseLeave,
+  onMouseDown,
+  onMouseUp,
+  onToggle,
+}: {
+  item: FaqItem;
+  expanded: boolean;
+  hovered: boolean;
+  active: boolean;
+  onMouseEnter: () => void;
+  onMouseLeave: () => void;
+  onMouseDown: () => void;
+  onMouseUp: () => void;
+  onToggle: () => void;
+}) {
+  const bodyRef = useRef<HTMLDivElement>(null);
+  const hasMounted = useRef(false);
+
+  useLayoutEffect(() => {
+    const body = bodyRef.current;
+    if (!body) return;
+
+    if (!hasMounted.current) {
+      body.style.height = expanded ? "auto" : "0px";
+      hasMounted.current = true;
+      return;
+    }
+
+    const startHeight = body.getBoundingClientRect().height;
+    const targetHeight = expanded ? body.scrollHeight : 0;
+
+    if (Math.abs(startHeight - targetHeight) < 1) {
+      body.style.height = expanded ? "auto" : "0px";
+      return;
+    }
+
+    body.style.height = `${startHeight}px`;
+    const animation = body.animate(
+      [{ height: `${startHeight}px` }, { height: `${targetHeight}px` }],
+      {
+        duration: 360,
+        easing: "cubic-bezier(0.22, 1, 0.36, 1)",
+        fill: "forwards",
+      },
+    );
+
+    animation.onfinish = () => {
+      body.style.height = expanded ? "auto" : `${targetHeight}px`;
+    };
+
+    return () => {
+      const currentHeight = body.getBoundingClientRect().height;
+      animation.cancel();
+      body.style.height = `${currentHeight}px`;
+    };
+  }, [expanded]);
+
+  return (
+    <article
+      className={`faq-item ${expanded ? "faq-item--expanded" : ""} ${hovered ? "faq-item--hovered" : ""} ${active ? "faq-item--active" : ""}`}
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
+      onMouseDown={onMouseDown}
+      onMouseUp={onMouseUp}
+    >
+      <button className="faq-item__trigger" type="button" aria-expanded={expanded} onClick={onToggle}>
+        <span>{item.title}</span>
+        <img className="faq-item__chevron" src={chevron} alt="" aria-hidden="true" />
+      </button>
+      <div className="faq-item__body" ref={bodyRef}>
+        <div className="faq-item__body-inner">
+          <p>{item.content}</p>
+        </div>
+      </div>
+    </article>
+  );
+}
+
 export function FaqSection() {
   const [expandedIndex, setExpandedIndex] = useState(0);
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
@@ -34,14 +120,17 @@ export function FaqSection() {
   return (
     <section className="faq-section" aria-labelledby="faq-title">
       <div className="faq-section__inner">
-        <h2 id="faq-title">功能问题解答</h2>
+        <h2 id="faq-title">功能说明</h2>
         <div className="faq-section__list">
           {faqItems.map((item, index) => {
             const expanded = expandedIndex === index;
             return (
-              <article
-                className={`faq-item ${expanded ? "faq-item--expanded" : ""} ${hoveredIndex === index ? "faq-item--hovered" : ""} ${activeIndex === index ? "faq-item--active" : ""}`}
+              <FaqItemCard
                 key={item.title}
+                item={item}
+                expanded={expanded}
+                hovered={hoveredIndex === index}
+                active={activeIndex === index}
                 onMouseEnter={() => {
                   if (hoverSuppressedIndex !== index) setHoveredIndex(index);
                 }}
@@ -51,24 +140,12 @@ export function FaqSection() {
                 }}
                 onMouseDown={() => setActiveIndex(index)}
                 onMouseUp={() => setActiveIndex(null)}
-              >
-                <button
-                  className="faq-item__trigger"
-                  type="button"
-                  aria-expanded={expanded}
-                  onClick={() => {
-                    setExpandedIndex(expanded ? -1 : index);
-                    setHoveredIndex(null);
-                    setHoverSuppressedIndex(index);
-                  }}
-                >
-                  <span>{item.title}</span>
-                  <img className="faq-item__chevron" src={chevron} alt="" aria-hidden="true" />
-                </button>
-                <div className="faq-item__body">
-                  <p>{item.content}</p>
-                </div>
-              </article>
+                onToggle={() => {
+                  setExpandedIndex(expanded ? -1 : index);
+                  setHoveredIndex(null);
+                  setHoverSuppressedIndex(index);
+                }}
+              />
             );
           })}
         </div>

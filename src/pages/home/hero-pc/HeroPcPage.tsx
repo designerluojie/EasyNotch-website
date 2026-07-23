@@ -6,6 +6,7 @@ import { getDownloadUrl, SITE_COPY } from "../../../config/site";
 import { HeroPcBackground } from "./HeroPcBackground";
 import { HeroPcNavigation } from "./HeroPcNavigation";
 import BorderGlow from "./BorderGlow";
+import { HelloHandwriting } from "./HelloHandwriting";
 import { HERO_BORDER_GLOW_COLORS } from "./hero-border-glow-config";
 import "./hero-pc.css";
 
@@ -34,28 +35,31 @@ export function HeroPcPage() {
     <>
       <HeroPcNavigation onDemoClick={handleDemoClick} />
       <section className="hero-pc" aria-labelledby="hero-pc-title">
-      <HeroPcBackground />
-      <div className="hero-pc__content">
-        <img className="hero-pc__product-mark" src={productMark} alt="" />
-        <h1 id="hero-pc-title">{SITE_COPY.heroTitle}</h1>
-        <p>
-          {SITE_COPY.heroDescription[0]}
-          <br />
-          {SITE_COPY.heroDescription[1]}
-        </p>
-        <BorderGlow
-          backgroundColor="#141119"
-          borderRadius={24}
-          colors={[...HERO_BORDER_GLOW_COLORS]}
-          className="hero-pc__cta-surface"
-        >
-          <button className="hero-pc__cta" type="button" onClick={handleDemoClick}>
-            <img src={ctaArrow} alt="" />
-            <span>立即下载</span>
-          </button>
-        </BorderGlow>
-      </div>
-      {notice ? <div className="hero-pc__notice" role="status">{notice}</div> : null}
+        <HeroPcBackground />
+        <div className="hero-pc__content">
+          <div className="hero-pc__product-mark-wrap">
+            <img className="hero-pc__product-mark" src={productMark} alt="" />
+            <HelloHandwriting />
+          </div>
+          <h1 id="hero-pc-title">{SITE_COPY.heroTitle}</h1>
+          <p>
+            {SITE_COPY.heroDescription[0]}
+            <br />
+            {SITE_COPY.heroDescription[1]}
+          </p>
+          <BorderGlow
+            backgroundColor="#141119"
+            borderRadius={24}
+            colors={[...HERO_BORDER_GLOW_COLORS]}
+            className="hero-pc__cta-surface"
+          >
+            <button className="hero-pc__cta" type="button" onClick={handleDemoClick}>
+              <img src={ctaArrow} alt="" />
+              <span>立即下载</span>
+            </button>
+          </BorderGlow>
+        </div>
+        {notice ? <div className="hero-pc__notice" role="status">{notice}</div> : null}
       </section>
     </>
   );

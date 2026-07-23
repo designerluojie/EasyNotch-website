@@ -21,7 +21,7 @@ describe("App shell", () => {
   it("renders the FAQ section with expandable feature answers", () => {
     render(<App />);
 
-    expect(screen.getByRole("heading", { name: "功能问题解答" })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: "功能说明" })).toBeInTheDocument();
     expect(screen.getByRole("button", { name: "关于音乐" })).toHaveAttribute("aria-expanded", "true");
     expect(screen.getByText(/Notch 可以把音乐控制放在 Mac 顶部入口里/)).toBeInTheDocument();
 

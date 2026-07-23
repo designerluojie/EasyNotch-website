@@ -1,0 +1,30 @@
+<?xml version="1.0" standalone="yes"?>
+<rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" version="2.0">
+    <channel>
+        <title>EasyNotch</title>
+        <item>
+            <title>1.0.7</title>
+            <pubDate>Thu, 23 Jul 2026 15:03:47 +0800</pubDate>
+            <sparkle:version>8</sparkle:version>
+            <sparkle:shortVersionString>1.0.7</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
+            <description sparkle:format="markdown"><![CDATA[# EasyNotch 1.0.7 验收候选版
+
+- 验证 Sparkle 自动更新的下载、安装和重启提示流程。
+- 此版本仅用于发布前验收，不会作为正式版本发布。
+]]></description>
+            <enclosure url="https://easynotch.designbento.cn/updates-test/EasyNotch-1.0.7.dmg" length="3912980" type="application/octet-stream" sparkle:edSignature="yvfR4gw0IzZp5MfAwWQnAbKr6pD81qCOWPzrfJFF+pTtYuDhkqHyMx3ENYK0Nj8GQmrLx8LZGG9OIMh6PGCYBw=="/>
+            <sparkle:deltas>
+                <enclosure url="https://easynotch.designbento.cn/updates-test/EasyNotch8-7.delta" sparkle:deltaFrom="7" length="15890" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="977840" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="rlJPwpOW/oUrAVFN35voLdXt3ZW0+LW9djYrOkBWUHa8N4zm4r+/kHmhmb2vHIBZJZIyuPNuMAS0Jc38tlR9AA=="/>
+            </sparkle:deltas>
+        </item>
+        <item>
+            <title>1.0.6</title>
+            <pubDate>Thu, 23 Jul 2026 14:55:58 +0800</pubDate>
+            <sparkle:version>7</sparkle:version>
+            <sparkle:shortVersionString>1.0.6</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
+            <enclosure url="https://easynotch.designbento.cn/updates-test/EasyNotch-1.0.6.dmg" length="3912981" type="application/octet-stream" sparkle:edSignature="hKbBKvN0g00vP8GYo6SWyYo5UIdsd39Qx1D/upGjEXzL9NKPo5EcXEioIJwkOqgz5v+N2/xeRo+5VP27BeH8Dg=="/>
+        </item>
+    </channel>
+</rss>

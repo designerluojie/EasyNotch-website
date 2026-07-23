@@ -3,6 +3,22 @@
     <channel>
         <title>EasyNotch</title>
         <item>
+            <title>1.0.7</title>
+            <pubDate>Thu, 23 Jul 2026 17:48:12 +0800</pubDate>
+            <sparkle:version>18</sparkle:version>
+            <sparkle:shortVersionString>1.0.7</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
+            <description sparkle:format="markdown"><![CDATA[# EasyNotch 1.0.7
+
+- 优化自动更新功能的正式分发与版本升级体验。
+- 支持从 1.0.6 下载、安装并自动重启至本版本。
+]]></description>
+            <enclosure url="https://easynotch.designbento.cn/updates/EasyNotch-1.0.7.dmg" length="3913981" type="application/octet-stream" sparkle:edSignature="CJ/lvv+vRBBZ+TWre8jGSE57GLPNr9Ii+PUxWPFv8JW3joS1hCafBOoQqjNRRlmNcOj5h0ttp2mBQ3NC30qSAQ=="/>
+            <sparkle:deltas>
+                <enclosure url="https://easynotch.designbento.cn/updates/EasyNotch18-17.delta" sparkle:deltaFrom="17" length="15846" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="977840" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,uk" sparkle:edSignature="rwcAoz3Dfv72xVGAHi2H8GKGWHIFQ+CqAciSKGF4QFoBaalULQALMJzAUrPUYwn7VYbFQMjHOvNEXm8xGzcgAA=="/>
+            </sparkle:deltas>
+        </item>
+        <item>
             <title>1.0.6</title>
             <pubDate>Thu, 23 Jul 2026 17:00:45 +0800</pubDate>
             <sparkle:version>17</sparkle:version>
